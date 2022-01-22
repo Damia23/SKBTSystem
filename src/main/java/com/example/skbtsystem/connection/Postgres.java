@@ -4,8 +4,7 @@ import java.net.URI;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class Postgres
-{
+public class Postgres {
     private static Connection conn = null;
 
     private static void initDb() {
