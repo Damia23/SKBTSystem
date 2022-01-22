@@ -131,14 +131,14 @@
     </div>
 
     <div class="signup">
-        <form action="">
+        <form action="StudentRegistrationServlet" method="post">
             <label for="chk" aria-hidden="true">Sign up</label>
             <input type="text" name="text" placeholder="Username" required="">
             <input type="text" name="phone" placeholder="Phone number" required="">
             <input type="email" name="email" placeholder="Email" required="">
             <input type="password" name="password" placeholder="Password" required="">
 
-            <button>Sign up</button>
+            <button type="submit" value="register" formaction="StudentRegistrationServlet"></button>
         </form>
     </div>
 </div>
