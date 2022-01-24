@@ -12,6 +12,6 @@
 </head>
 <body>
 <a href = AddBook.jsp>Add Book</a>
-
+<a href = ViewBook.jsp>View Book</a>
 </body>
 </html>
