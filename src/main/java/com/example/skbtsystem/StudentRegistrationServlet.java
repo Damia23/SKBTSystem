@@ -32,7 +32,7 @@ public class StudentRegistrationServlet extends HttpServlet {
             Connection conn = DriverManager.getConnection(url, user, pass);
 
             PreparedStatement st;
-            String query="insert into student(studentName,studentPhone,studentEmail,studentPhone) values(?,?,?,?)";
+            String query="insert into student(studentName,studentPhone,studentEmail,studentPass) values(?,?,?,?)";
             st = conn.prepareStatement(query);
             st.setString(1,studName);
             st.setString(2,studPhone);
