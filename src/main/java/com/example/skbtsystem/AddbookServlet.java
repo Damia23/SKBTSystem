@@ -11,7 +11,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
-@WebServlet(name = "com.example.skbtsystem.AddbookServlet", value = "/com.example.skbtsystem.AddbookServlet")
+@WebServlet(name = "AddbookServlet", value = "/AddbookServlet")
 public class AddbookServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
