@@ -27,7 +27,7 @@ public class StudentRegistrationServlet extends HttpServlet
         PrintWriter out = response.getWriter();
         out.print(studentName);
         out.print(studentPhone);
-        out.print(studentEmail;
+        out.print(studentEmail);
         out.print(studentPass);
 
 
