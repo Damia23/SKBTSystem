@@ -124,7 +124,7 @@
         <form>
             <label for="chk" aria-hidden="true">Login</label>
             <label2>Hello Teacher!</label2>
-            <input type="text" name="text" placeholder="Username" required="">
+            <input type="email" name="email" placeholder="Email" required="">
             <input type="password" name="pswd" placeholder="Password" required="">
             <button>Login</button>
         </form>
