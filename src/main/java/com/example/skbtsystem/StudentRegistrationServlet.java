@@ -12,18 +12,6 @@ import java.sql.SQLException;
 
 @WebServlet(name = "StudentRegistrationServlet", value = "/StudentRegistrationServlet")
 public class StudentRegistrationServlet extends HttpServlet {
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-    {
-        HttpSession session = request.getSession();
-
-        String studentName = (String) session.getAttribute("studentName");
-        String studentPhone = (String) session.getAttribute("studentPhone");
-        String studentEmail = (String) session.getAttribute("studentEmail");
-        String studentPass = (String) session.getAttribute("studentPass");
-
-        Student std = new Student(studentName, studentPhone, studentEmail, studentPass);
-    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
