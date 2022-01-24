@@ -124,8 +124,8 @@
         <form>
             <label for="chk" aria-hidden="true">Login</label>
             <label2>Hello Student!</label2>
-            <input type="email" name="email" placeholder="Email" required="">
-            <input type="password" name="pswd" placeholder="Password" required="">
+            <input type="email" name="studentEmail" placeholder="Email" required="">
+            <input type="password" name="studentPass" placeholder="Password" required="">
             <button>Login</button>
         </form>
     </div>
@@ -133,10 +133,10 @@
     <div class="signup">
         <form action="StudentRegistrationServlet" method="post">
             <label for="chk" aria-hidden="true">Sign up</label>
-            <input type="text" name="text" placeholder="Username" required="">
-            <input type="text" name="phone" placeholder="Phone number" required="">
-            <input type="email" name="email" placeholder="Email" required="">
-            <input type="password" name="password" placeholder="Password" required="">
+            <input type="text" name="studentName" placeholder="Username" required="">
+            <input type="text" name="studentPhone" placeholder="Phone number" required="">
+            <input type="email" name="studentEmail" placeholder="Email" required="">
+            <input type="password" name="studentPass" placeholder="Password" required="">
 
             <button type="submit" value="register" formaction="StudentRegistrationServlet"></button>
         </form>
