@@ -1,7 +1,5 @@
 package com.example.skbtsystem;
 
-import com.example.skbtsystem.connection.Postgres;
-
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
@@ -12,52 +10,59 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import static java.lang.System.out;
-
-
 @WebServlet(name = "StudentRegistrationServlet", value = "/StudentRegistrationServlet")
-public class StudentRegistrationServlet extends HttpServlet
-{
-    private static final long serialVersionUID = 1L;
+public class StudentRegistrationServlet extends HttpServlet {
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
+        HttpSession session = request.getSession();
+
+        String studentName = (String) session.getAttribute("studentName");
+        String studentPhone = (String) session.getAttribute("studentPhone");
+        String studentEmail = (String) session.getAttribute("studentEmail");
+        String studentPass = (String) session.getAttribute("studentPass");
+
+        Student std = new Student(studentName, studentPhone, studentEmail, studentPass);
+    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
-        String studentName = request.getParameter("studentName");
-        String studentPhone = request.getParameter("studentPhone");
-        String studentEmail = request.getParameter("studentEmail");
-        String studentPass = request.getParameter("studentPass");
-        Connection conn = null;
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
 
-        try
-        {
+        try{
+            String studName = request.getParameter("studentName");
+            String studPhone = request.getParameter("studentPhone");
+            String studEmail = request.getParameter("studentEmail");
+            String studPass = request.getParameter("studentPhone");
+
             Class.forName("org.postgresql.Driver");
-            String dbURL = "postgresql://postgres:system@localhost:5432/library"; //ni url dri heroku database
-            String user = "wzhkegxdhdsbgm"; //ni user dri heroku database
-            String pass = "2de0ec5650e40e6383f4ad61c98e44dec650a6a8f9d79fdf03efa59408d53f99"; //ni password dri heroku database
-            conn = DriverManager.getConnection(dbURL, user, pass);
+            String url = "jdbc:postgresql://ec2-3-212-143-188.compute-1.amazonaws.com:5432/d9pq1r2tte9jfs";
+            String user = "wzhkegxdhdsbgm";
+            String pass = "2de0ec5650e40e6383f4ad61c98e44dec650a6a8f9d79fdf03efa59408d53f99";
+            Connection conn = DriverManager.getConnection(url, user, pass);
 
-            PreparedStatement pst = conn.prepareStatement("insert into student(studentname, studentPass, studentEmail, studentPhone) values (?,?,?,?)");
-            pst.setString(1,studentName);
-            pst.setString(2,studentPhone);
-            pst.setString(3,studentEmail);
-            pst.setString(4,studentPass);
+            PreparedStatement st;
+            String query="insert into student(studentName,studentPhone,studentEmail,studentPhone) values(?,?,?,?)";
+            st = conn.prepareStatement(query);
+            st.setString(1,studName);
+            st.setString(2,studPhone);
+            st.setString(3,studEmail);
+            st.setString(4,studPass);
+            int row = st.executeUpdate();
 
-            int rowCount = pst.executeUpdate();
-            if (rowCount >0)
+            if (row>0)
             {
-                request.setAttribute("status", "success");
-
-
+                out.println("Success");
             }else{
-                request.setAttribute("status", "failed");
+                out.println("Failed");
             }
 
-        } catch (Exception e)
-        {
+
+        } catch (Exception e) {
             out.println(e);
+        }
 
+    }
 }
-}
-}
-

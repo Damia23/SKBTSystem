@@ -2,26 +2,16 @@ package com.example.skbtsystem;
 
 public class Student
 {
-    private String studentID, studentName, studentEmail, studentPass, studentPhone;
+    private String studentName, studentPhone, studentEmail, studentPass;
 
-    public Student(String studentID, String studentName, String studentEmail, String studentPass, String studentPhone)
+    public Student(String studentName, String studentEmail, String studentPass, String studentPhone)
     {
-        this.studentID = studentID;
         this.studentName = studentName;
         this.studentEmail = studentEmail;
         this.studentPass = studentPass;
         this.studentPhone = studentPhone;
     }
 
-    public String getStudentID()
-    {
-        return studentID;
-    }
-
-    public void setStudentID(String studentID)
-    {
-        this.studentID = studentID;
-    }
 
     public String getStudentName()
     {
