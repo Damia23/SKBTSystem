@@ -124,7 +124,6 @@
         <form>
             <label></label>
             <label for="chk" aria-hidden="true">Hello Librarian!</label>
-            <a href="AddBook.jsp"></a>
         </form>
     </div>
 
@@ -134,7 +133,7 @@
             <label2>Happy Working!</label2>
             <input type="email" name="email" placeholder="Email" required="">
             <input type="password" name="pswd" placeholder="Password" required="">
-            <button>Login</button>
+            <a href="AddBook.jsp" ><button>Login</button></a>
         </form>
     </div>
 </div>
