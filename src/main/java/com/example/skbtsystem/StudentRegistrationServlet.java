@@ -43,7 +43,7 @@ public class StudentRegistrationServlet extends HttpServlet
             pst.setString(4,studentPass);
 
             int rowCount = pst.executeUpdate();
-            dispatcher = request.getRequestDispatcher("StudentRegister.jsp");
+            dispatcher = request.getRequestDispatcher("/StudentRegister.jsp");
 
             if (rowCount >0)
             {
