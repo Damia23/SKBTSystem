@@ -12,6 +12,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import static java.lang.System.out;
+
 
 @WebServlet(name = "StudentRegistrationServlet", value = "/StudentRegistrationServlet")
 public class StudentRegistrationServlet extends HttpServlet
@@ -25,7 +27,6 @@ public class StudentRegistrationServlet extends HttpServlet
         String studentPhone = request.getParameter("studentPhone");
         String studentEmail = request.getParameter("studentEmail");
         String studentPass = request.getParameter("studentPass");
-        RequestDispatcher dispatcher = null;
         Connection conn = null;
 
         try
@@ -43,8 +44,6 @@ public class StudentRegistrationServlet extends HttpServlet
             pst.setString(4,studentPass);
 
             int rowCount = pst.executeUpdate();
-            dispatcher = request.getRequestDispatcher("/StudentRegister.jsp");
-
             if (rowCount >0)
             {
                 request.setAttribute("status", "success");
@@ -53,21 +52,12 @@ public class StudentRegistrationServlet extends HttpServlet
             }else{
                 request.setAttribute("status", "failed");
             }
-            dispatcher.forward(request, response);
 
         } catch (Exception e)
         {
-            e.printStackTrace();
+            out.println(e);
 
-
-}finally{
-        try{
-            conn.close();
-
-        } catch (SQLException e)
-        {
-            e.printStackTrace();
-        }
 }
-}}
+}
+}
 
