@@ -1,3 +1,5 @@
+package com.example.skbtsystem;
+
 import com.example.skbtsystem.AddBook;
 
 import javax.servlet.*;
@@ -9,7 +11,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
-@WebServlet(name = "AddbookServlet", value = "/AddbookServlet")
+@WebServlet(name = "com.example.skbtsystem.AddbookServlet", value = "/com.example.skbtsystem.AddbookServlet")
 public class AddbookServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
