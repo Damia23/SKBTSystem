@@ -31,7 +31,7 @@ public class StudentRegistrationServlet extends HttpServlet
         try
         {
             Class.forName("org.postgresql.Driver");
-            String dbURL = "postgres://wzhkegxdhdsbgm:2de0ec5650e40e6383f4ad61c98e44dec650a6a8f9d79fdf03efa59408d53f99@ec2-3-212-143-188.compute-1.amazonaws.com:5432/d9pq1r2tte9jfs"; //ni url dri heroku database
+            String dbURL = "postgresql://postgres:system@localhost:5432/library"; //ni url dri heroku database
             String user = "wzhkegxdhdsbgm"; //ni user dri heroku database
             String pass = "2de0ec5650e40e6383f4ad61c98e44dec650a6a8f9d79fdf03efa59408d53f99"; //ni password dri heroku database
             conn = DriverManager.getConnection(dbURL, user, pass);

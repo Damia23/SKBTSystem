@@ -138,7 +138,7 @@
             <input type="email" name="studentEmail" placeholder="Email" required="">
             <input type="password" name="studentPass" placeholder="Password" required="">
 
-            <button type="submit" value="register" formaction="StudentRegistrationServlet"></button>
+            <button type="submit" value="register" formaction="StudentRegistrationServlet">Submit</button>
         </form>
     </div>
 </div>
