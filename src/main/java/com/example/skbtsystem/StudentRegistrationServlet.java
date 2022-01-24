@@ -19,8 +19,16 @@ public class StudentRegistrationServlet extends HttpServlet
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
+        String studentName = request.getParameter("studentName");
+        String studentPhone = request.getParameter("studentPhone");
+        String studentEmail = request.getParameter("studentEmail");
+        String studentPass = request.getParameter("studentPass");
+
         PrintWriter out = response.getWriter();
-        out.print("Working");
+        out.print(studentName);
+        out.print(studentPhone);
+        out.print(studentEmail;
+        out.print(studentPass);
 
 
 }
