@@ -128,13 +128,13 @@
     </div>
 
     <div class="login">
-        <form>
+        <a href="AddBook.jsp"><form>
             <label for="chk" aria-hidden="true">Login</label>
             <label2>Happy Working!</label2>
             <input type="email" name="email" placeholder="Email" required="">
             <input type="password" name="pswd" placeholder="Password" required="">
             <a href="AddBook.jsp" ><button>Login</button></a>
-        </form>
+        </form></a>
     </div>
 </div>
 </body>
