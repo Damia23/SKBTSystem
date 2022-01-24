@@ -11,6 +11,7 @@
     <title>Librarian Dashboard</title>
 </head>
 <body>
+<a href = AddBook.jsp></a>
 
 </body>
 </html>

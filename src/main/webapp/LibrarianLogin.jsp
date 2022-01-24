@@ -128,7 +128,7 @@
     </div>
 
     <div class="login">
-        <a href="AddBook.jsp"><form>
+        <a href="LibrarianDashboard.jsp"><form>
             <label for="chk" aria-hidden="true">Login</label>
             <label2>Happy Working!</label2>
             <input type="email" name="email" placeholder="Email" required="">
