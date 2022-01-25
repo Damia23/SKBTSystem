@@ -23,7 +23,7 @@ public class StudentRegistrationServlet extends HttpServlet {
             String studName = request.getParameter("studentName");
             String studPhone = request.getParameter("studentPhone");
             String studEmail = request.getParameter("studentEmail");
-            String studPass = request.getParameter("studentPhone");
+            String studPass = request.getParameter("studentPass");
 
             Class.forName("org.postgresql.Driver");
             String url = "jdbc:postgresql://ec2-3-212-143-188.compute-1.amazonaws.com:5432/d9pq1r2tte9jfs";
