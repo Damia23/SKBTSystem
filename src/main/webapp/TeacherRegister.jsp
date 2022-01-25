@@ -121,11 +121,11 @@
     <input type="checkbox" id="chk" aria-hidden="true">
 
     <div class="login">
-        <form>
+        <form action="TeacherLogin.jsp" method="post">
             <label for="chk" aria-hidden="true">Login</label>
             <label2>Hello Teacher!</label2>
-            <input type="email" name="email" placeholder="Email" required="">
-            <input type="password" name="pswd" placeholder="Password" required="">
+            <input type="email" name="teacherEmail" placeholder="Email" required="">
+            <input type="password" name="teacherPass" placeholder="Password" required="">
             <button>Login</button>
         </form>
     </div>
@@ -137,7 +137,6 @@
             <input type="text" name="teacherPhone" placeholder="Phone number" required="">
             <input type="email" name="teacherEmail" placeholder="Email" required="">
             <input type="password" name="teacherPass" placeholder="Password" required="">
-
             <button type="submit" value="register" formaction="/TeacherRegistrationServlet">Submit</button>
         </form>
     </div>
