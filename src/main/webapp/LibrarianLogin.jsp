@@ -120,21 +120,26 @@
 <div class="main">
     <input type="checkbox" id="chk" aria-hidden="true">
 
-    <div class="signup">
-        <form>
-            <label></label>
-            <label for="chk" aria-hidden="true">Hello Librarian!</label>
+    <div class="login">
+        <form action="LibrarianLogin2.jsp" method="post">
+            <label for="chk" aria-hidden="true">Login</label>
+            <label2>Hello Student!</label2>
+            <input type="email" name="librarianEmail" placeholder="Email" required="">
+            <input type="password" name="librarianPass" placeholder="Password" required="">
+            <button>Login</button>
         </form>
     </div>
 
-    <div class="login">
-        <a href="LibrarianDashboard.jsp"><form>
-            <label for="chk" aria-hidden="true">Login</label>
-            <label2>Happy Working!</label2>
-            <input type="email" name="email" placeholder="Email" required="">
-            <input type="password" name="pswd" placeholder="Password" required="">
-            <a href="AddBook.jsp" ><button>Login</button></a>
-        </form></a>
+    <div class="signup">
+        <form action="LibrarianRegistrationServlet" method="post">
+            <label for="chk" aria-hidden="true">Sign up</label>
+            <input type="text" name="librarianName" placeholder="Name" required="">
+            <input type="text" name="librarianPhone" placeholder="Phone number" required="">
+            <input type="email" name="librarianEmail" placeholder="Email" required="">
+            <input type="password" name="librarianPass" placeholder="Password" required="">
+
+            <button type="submit" value="register" formaction="/LibrarianRegistrationServlet">Submit</button>
+        </form>
     </div>
 </div>
 </body>
