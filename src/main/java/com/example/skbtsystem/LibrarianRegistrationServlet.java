@@ -31,7 +31,7 @@ public class LibrarianRegistrationServlet extends HttpServlet {
             Connection con = DriverManager.getConnection(url, user, pass);
 
             PreparedStatement st;
-            String query="insert into librarian(librarianname,librarianphone,librarianemail,librarianpass) values(?,?,?,?)";
+            String query="insert into librarian(librarianid, librarianname,librarianphone,librarianemail,librarianpass) values(nextval('librarian_librarianId_seq'),?,?,?,?)";
             st = con.prepareStatement(query);
             st.setString(1,libName);
             st.setString(2,libPhone);
