@@ -120,7 +120,7 @@
 <div class="main">
     <input type="checkbox" id="chk" aria-hidden="true">
 
-    <div class="login">
+    <div class="signup">
         <form action="LibrarianLogin2.jsp" method="post">
             <label for="chk" aria-hidden="true">Login</label>
             <label2>Hello Student!</label2>
@@ -130,7 +130,7 @@
         </form>
     </div>
 
-    <div class="signup">
+    <div class="login">
         <form action="LibrarianRegistrationServlet" method="post">
             <label for="chk" aria-hidden="true">Sign up</label>
             <input type="text" name="librarianName" placeholder="Name" required="">
