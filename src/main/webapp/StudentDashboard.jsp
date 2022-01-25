@@ -13,7 +13,7 @@ You are not logged in<br/>
 <a href="studentLogin.jsp">Please Login</a>
 <%} else {
 %>
-<a href='logout.jsp'>Log out</a>
+
 <%
     }
 %>
@@ -90,6 +90,7 @@ You are not logged in<br/>
     <label>Hello <%=session.getAttribute("studentEmail")%>!</label>
     <label2>You can borrow and return book at your fingertips!</label2>
     <a href="AddBook.jsp"><button>Add Book</button></a>
+    <a href='logout.jsp'>Log out</a>
 </div>
 </body>
 </html>
