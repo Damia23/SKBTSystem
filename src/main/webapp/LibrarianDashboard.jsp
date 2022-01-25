@@ -6,6 +6,17 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    if ((session.getAttribute("librarianEmail") == null) || (session.getAttribute("librarianEmail") == "")) {
+%>
+You are not logged in<br/>
+<a href="LibrarianLogin.jsp">Please Login</a>
+<%} else {
+%>
+
+<%
+    }
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -76,10 +87,11 @@
 </style>
 <body>
 <div class="main">
-    <label>Hello Librarian!</label>
+    <label>Hello <%=session.getAttribute("librarianEmail")%>!</label>
     <label2>You have the authority to manage the library operations</label2>
     <a href="AddBook.jsp"><button>Add Book</button></a>
     <a href="ViewBook.jsp"><button>View Book</button></a>
+    <a href='LibrarianLogout.jsp'><button>Log out</button></a>
 </div>
 </body>
 </html>
