@@ -22,7 +22,7 @@ public class TeacherRegistrationServlet extends HttpServlet {
             String tcName = request.getParameter("teacherName");
             String tcPhone = request.getParameter("teacherPhone");
             String tcEmail = request.getParameter("teacherEmail");
-            String tcPass = request.getParameter("teacherPhone");
+            String tcPass = request.getParameter("teacherPass");
 
             Class.forName("org.postgresql.Driver");
             String url = "jdbc:postgresql://ec2-3-212-143-188.compute-1.amazonaws.com:5432/d9pq1r2tte9jfs";
