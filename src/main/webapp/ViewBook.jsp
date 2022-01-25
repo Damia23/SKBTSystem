@@ -42,7 +42,7 @@
         <hr>
 
         <div class="col-md-6">
-            <a href="Addbook.jsp" class="btn btn-primary">Add New Data</a>
+            <a href="AddBook.jsp" class="btn btn-primary">Add New Book</a>
         </div>
 
 
@@ -98,6 +98,7 @@
 
         </table>
     </div>
+</div>
 </body>
 </html>
 
