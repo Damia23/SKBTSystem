@@ -61,7 +61,7 @@
 <body>
 <div class="main">
     <label>Welcome To</label>
-    <label>SKBT Library Management System</label>
+    <label>SKBT Library</label>
     <a href="Role.jsp"><button>Get Started</button></a>
 </div>
 </body>
