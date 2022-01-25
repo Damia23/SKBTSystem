@@ -133,7 +133,7 @@
     <div class="signup">
         <form action="StudentRegistrationServlet" method="post">
             <label for="chk" aria-hidden="true">Sign up</label>
-            <input type="text" name="studentName" placeholder="Username" required="">
+            <input type="text" name="studentName" placeholder="Name" required="">
             <input type="text" name="studentPhone" placeholder="Phone number" required="">
             <input type="email" name="studentEmail" placeholder="Email" required="">
             <input type="password" name="studentPass" placeholder="Password" required="">
