@@ -92,7 +92,7 @@ You are not logged in<br/>
     <a href="StudentBorrow.jsp"><button>Borrow Book</button></a>
     <a href="StudentReturn.jsp"><button>Return Book</button></a>
     <a href="StudentFine.jsp"><button>Fine</button></a>
-    <a href='logout.jsp'><button>Log out</button></a>
+    <a href='StudentLogout.jsp'><button>Log out</button></a>
 </div>
 </body>
 </html>
