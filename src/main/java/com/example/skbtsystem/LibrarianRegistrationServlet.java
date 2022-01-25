@@ -28,11 +28,11 @@ public class LibrarianRegistrationServlet extends HttpServlet {
             String url = "jdbc:postgresql://ec2-3-212-143-188.compute-1.amazonaws.com:5432/d9pq1r2tte9jfs";
             String user = "wzhkegxdhdsbgm";
             String pass = "2de0ec5650e40e6383f4ad61c98e44dec650a6a8f9d79fdf03efa59408d53f99";
-            Connection conn = DriverManager.getConnection(url, user, pass);
+            Connection con = DriverManager.getConnection(url, user, pass);
 
             PreparedStatement st;
-            String query="insert into librarian(librarianname,librarianphone,librarianemail,librarianass) values(?,?,?,?)";
-            st = conn.prepareStatement(query);
+            String query="insert into librarian(librarianname,librarianphone,librarianemail,librarianpass) values(?,?,?,?)";
+            st = con.prepareStatement(query);
             st.setString(1,libName);
             st.setString(2,libPhone);
             st.setString(3,libEmail);
