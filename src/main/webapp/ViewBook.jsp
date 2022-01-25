@@ -86,7 +86,7 @@
                 <td style="color:black"><%=res.getString("bookPublisher")%></td>
                 <td class="text-center">
                     <a href='Updatebook.jsp?u=<%=res.getString("bookId")%>' class="btn btn-success">Update</a>
-                    <a href='DeleteBook.jsp?d=<%=res.getString("bookId")%>' class="btn btn-danger">Delete</a>
+                    <a href='DeleteBook.jsp?d=<%=res.getString("bookId")%>' class="btn btn-danger" onclick="return confirm('Are you sure to delete record id:{{id}}')">Delete</a>
                 </td>
             </tr>
 
