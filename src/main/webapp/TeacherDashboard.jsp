@@ -20,7 +20,7 @@ You are not logged in<br/>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Student Dashboard</title>
+    <title>Teacher Dashboard</title>
     <link rel="stylesheet" type="text/css" href="slide navbar style.css">
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 </head>
@@ -89,8 +89,10 @@ You are not logged in<br/>
 <div class="main">
     <label>Hello <%=session.getAttribute("teacherEmail")%>!</label>
     <label2>You can borrow and return book at your fingertips!</label2>
-    <a href="AddBook.jsp"><button>Add Book</button></a>
-    <a href='logout.jsp'>Log out</a>
+    <a href="TeacherBorrow.jsp"><button>Borrow Book</button></a>
+    <a href="TeacherReturn.jsp"><button>Return Book</button></a>
+    <a href="TeacherFine.jsp"><button>Fine</button></a>
+    <a href='logout.jsp'><button>Log out</button></a>
 </div>
 </body>
 </html>
