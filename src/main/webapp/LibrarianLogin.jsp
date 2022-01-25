@@ -52,8 +52,8 @@
     }
 
     label2{
-        color: rebeccapurple;
-        font-size: 1.3em;
+        color: mediumpurple;
+        font-size: 1.6em;
         justify-content: center;
         display: flex;
         margin: 50px;
@@ -64,7 +64,7 @@
 
     input{
         width: 60%;
-        height: 40px;
+        height: 30px;
         background: #e0dede;
         justify-content: center;
         display: flex;
@@ -123,7 +123,7 @@
     <div class="signup">
         <form action="LibrarianLogin2.jsp" method="post">
             <label for="chk" aria-hidden="true">Login</label>
-            <label2>Hello Student!</label2>
+            <label2>Hello Librarian!</label2>
             <input type="email" name="librarianEmail" placeholder="Email" required="">
             <input type="password" name="librarianPass" placeholder="Password" required="">
             <button>Login</button>
