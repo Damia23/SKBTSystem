@@ -10,6 +10,6 @@
 <%
     session.setAttribute("teacherEmail", null);
     session.invalidate();
-    response.sendRedirect("TeacherLogin.jsp");
+    response.sendRedirect("TeacherRegister.jsp");
 %>
 
