@@ -121,7 +121,7 @@
     <input type="checkbox" id="chk" aria-hidden="true">
 
     <div class="login">
-        <form>
+        <form action="StudentLogin.jsp" method="post">
             <label for="chk" aria-hidden="true">Login</label>
             <label2>Hello Student!</label2>
             <input type="email" name="studentEmail" placeholder="Email" required="">
