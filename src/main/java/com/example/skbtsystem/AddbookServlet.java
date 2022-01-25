@@ -48,15 +48,14 @@ public class AddbookServlet extends HttpServlet {
             String pass = "2de0ec5650e40e6383f4ad61c98e44dec650a6a8f9d79fdf03efa59408d53f99";
             Connection conn = DriverManager.getConnection(url, user, pass);
 
-            String query="INSERT into book (bookId,bookTitle,bookPubYear,bookAuthor,bookAmount,bookPublisher) values(?,?,?,?,?,?)";
+            String query="INSERT into book (bookId,bookTitle,bookPubYear,bookAuthor,bookAmount,bookPublisher) values(nextval('book_bookId_seq'),?,?,?,?,?)";
             PreparedStatement st;
             st = conn.prepareStatement(query);
-            st.setString(1,bookid);
-            st.setString(2,booktitle);
-            st.setString(3,bookpubyear);
-            st.setString(4,bookauthor);
-            st.setString(5,bookamount);
-            st.setString(6,bookpublisher);
+            st.setString(1,booktitle);
+            st.setString(2,bookpubyear);
+            st.setString(3,bookauthor);
+            st.setString(4,bookamount);
+            st.setString(5,bookpublisher);
             int row= st.executeUpdate();//return no of row effected
 
             if(row>0){
