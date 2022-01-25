@@ -13,7 +13,7 @@ You are not logged in<br/>
 <a href="studentLogin.jsp">Please Login</a>
 <%} else {
 %>
-Welcome <%=session.getAttribute("teacherEmail")%>
+Welcome <%=session.getAttribute("studentEmail")%>
 <a href='logout.jsp'>Log out</a>
 <%
     }
