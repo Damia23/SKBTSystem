@@ -88,7 +88,7 @@ Welcome <%=session.getAttribute("studentEmail")%>
 </style>
 <body>
 <div class="main">
-    <label>Hello Student!</label>
+    <label>Hello <%=session.getAttribute("studentEmail")%>!</label>
     <label2>You can borrow and return book at your fingertips!</label2>
     <a href="AddBook.jsp"><button>Add Book</button></a>
 </div>
