@@ -170,7 +170,7 @@
             <input type="date" name="returnDate">
         </div>
         <button type="submit" class="button1">Borrow</button>
-        <button href="Welcome.jsp" class="button2">Cancel</button>
+        <button href="LibrarianDashboard.jsp" class="button2">Cancel</button>
     </form>
 </div>
 
