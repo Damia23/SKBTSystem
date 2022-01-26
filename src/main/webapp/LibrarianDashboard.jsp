@@ -90,6 +90,8 @@ You are not logged in<br/>
     <label>Hello <%=session.getAttribute("librarianEmail")%>!</label>
     <label2>You have the authority to manage the library operations</label2>
     <a href="ViewBook.jsp"><button>Book</button></a>
+    <a href="LibrarianBorrow.jsp"><button>Borrow</button></a>
+    <a href="ViewBorrow.jsp"><button>View Borrow</button></a>
     <a href='LibrarianLogout.jsp'><button>Log out</button></a>
 </div>
 </body>
