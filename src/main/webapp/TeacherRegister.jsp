@@ -141,7 +141,7 @@
     <div class="login">
         <form action="TeacherLogin.jsp" method="post">
             <label for="chk" aria-hidden="true">Login</label>
-            <label2>Hello Teacher!</label2>
+            <label2>Hello Teacher!!</label2>
             <input type="email" name="teacherEmail" placeholder="Email" required="">
             <input type="password" name="teacherPass" placeholder="Password" required="">
             <button>Login</button>
