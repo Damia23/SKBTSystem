@@ -11,6 +11,7 @@
     <title>Teacher</title>
     <link rel="stylesheet" type="text/css" href="slide navbar style.css">
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <style>
     body{
@@ -116,8 +117,24 @@
         transform: scale(.6);
     }
 
+    .btn {
+        background-color: rebeccapurple;
+        border: none;
+        color: mediumpurple;
+        padding: 12px 16px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: purple;
+    }
+
 </style>
 <body>
+<div class="btn">
+    <i class="fa fa-home" action="Role.jsp"></i>
+</div>
 
 <div class="main">
     <input type="checkbox" id="chk" aria-hidden="true">
