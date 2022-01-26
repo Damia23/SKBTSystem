@@ -11,6 +11,7 @@
     <title>Librarian</title>
     <link rel="stylesheet" type="text/css" href="slide navbar style.css">
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <style>
     body{
@@ -115,8 +116,26 @@
     #chk:checked ~ .signup label{
         transform: scale(.6);
     }
+    .btn {
+        background-color: rebeccapurple;
+        border: none;
+        color: white;
+        padding: 12px 16px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: mediumpurple;
+    }
+
 </style>
 <body>
+
+<div class="btn">
+    <a href="Role.jsp" class="fa fa-home"></a>
+</div>
+
 <div class="main">
     <input type="checkbox" id="chk" aria-hidden="true">
 

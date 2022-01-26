@@ -120,14 +120,14 @@
     .btn {
         background-color: rebeccapurple;
         border: none;
-        color: mediumpurple;
+        color: white;
         padding: 12px 16px;
         font-size: 16px;
         cursor: pointer;
     }
 
     .btn:hover {
-        background-color: purple;
+        background-color: mediumpurple;
     }
 
 </style>
