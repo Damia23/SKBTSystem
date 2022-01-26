@@ -156,7 +156,7 @@
 <body>
 <div class="main-block">
     <h1>Borrow Book Form</h1><br>
-    <form action="BorrowDetailsServlet" method="post">
+    <form action="LibrarianBorrowServlet" method="post">
         <div>Book ID<br>
             <input type="text" name="bookID">
             <br>Librarian ID<br>
