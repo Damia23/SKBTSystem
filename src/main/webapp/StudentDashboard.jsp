@@ -87,7 +87,7 @@ You are not logged in<br/>
 </style>
 <body>
 <div class="main">
-    <label>Hello <%=session.getAttribute("studentEmail")%>!</label>
+    <label>Hello, <%=session.getAttribute("studentEmail")%>!</label>
     <label2>You can borrow and return book at your fingertips!</label2>
     <a href="StudentBorrow.jsp"><button>Borrow Book</button></a>
     <a href="StudentReturn.jsp"><button>Return Book</button></a>
