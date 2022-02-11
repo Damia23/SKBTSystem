@@ -20,7 +20,7 @@
     <img src="moon.png" id="moon">
     <img src="mountains_behind.png" id="mountains_behind">
     <h2 id="text">SKBT Library</h2>
-    <a href="#sec" id="#btn">Explore</a>
+    <a href="#sec" id="btn">Explore</a>
     <img src="mountains_front.png" id="mountains_front">
 </section>
 
