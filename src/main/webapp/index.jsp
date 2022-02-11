@@ -2,67 +2,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Home</title>
-    <link rel="stylesheet" type="text/css" href="slide navbar style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+    <title>SKBT Library Management System</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<style>
-    body{
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        font-family: 'Jost', sans-serif;
-        background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-    }
-    .main{
-        width: 350px;
-        height: 350px;
-        background: red;
-        overflow: hidden;
-        background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
-        border-radius: 30px;
-        box-shadow: 5px 20px 50px #000;
-    }
-
-    label{
-        color: #fff;
-        font-size: 2.3em;
-        justify-content: center;
-        display: flex;
-        margin: 50px;
-        font-weight: bold;
-    }
-
-    button{
-        width: 60%;
-        height: 40px;
-        margin: 10px auto;
-        justify-content: center;
-        display: block;
-        color: #fff;
-        background: #573b8a;
-        font-size: 1em;
-        font-weight: bold;
-        margin-top: 20px;
-        outline: none;
-        border: none;
-        border-radius: 5px;
-        transition: .2s ease-in;
-        cursor: pointer;
-    }
-    button:hover{
-        background: #6d44b8;
-    }
-
-</style>
 <body>
-<div class="main">
-    <label>Welcome To</label>
-    <label>SKBT Library</label>
-    <a href="Role.jsp"><button>Get Started</button></a>
+
+<header>
+    <a href="#" class="logo">SKBT</a>
+    <ul>
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</header>
+
+<section>
+    <img src="stars.png" id="stars">
+    <img src="moon.png" id="moon">
+    <img src="mountains_behind.png" id="mountains_behind">
+    <h2 id="text">SKBT Library</h2>
+    <a href="#sec" id="#btn">Explore</a>
+    <img src="mountains_front.png" id="mountains_front">
+</section>
+
+<div class="sec" id="sec">
+    <h2>SKBT Library Management System</h2>
+    <p>This library specifically made for the library operations of Sekolah Kebangsaan (Felda) Bukit Tajau, Maran, Pahang.
+        This system designed to manage all the functions of the library. It helps librarian to maintain the database of new books and the books that are borrowed by members along with their due dates. This system completely automates all your library’s activities. It tracks the records of the number of books in the library, how many books are issued, or how many books have been returned or renewed or late fine charges, etc.<br>
+        You can find books in an instant, issue/reissue books quickly, and manage all the data efficiently and orderly using this system. The purpose of a library management system is to provide instant and accurate data regarding any type of book, thereby saving a lot of time and effort.
+        <a href="Role.jsp" id="btn">Register Now</a><br><br><br></p>
 </div>
+
+<script>
+    let stars = document.getElementById('stars');
+    let moon = document.getElementById('moon');
+    let mountains_behind = document.getElementById('mountains_behind');
+    let text = document.getElementById('text');
+    let btn = document.getElementById('btn');
+    let mountains_front = document.getElementById('mountains_front');
+
+    window.addEventListener('scroll', function()
+    {
+        let value = window.scrollY;
+        stars.style.left = value *0.25 + 'px';
+        moon.style.top = value *1.05 + 'px';
+        mountains_behind.style.top = value *0.5 + 'px';
+        mountains_front.style.top = value *0 + 'px';
+        text.style.marginRight = value *4 + 'px';
+        text.style.marginTop = value *1.5 + 'px';
+        btn.style.marginTop = value *1.5 + 'px';
+    })
+
+</script>
+
 </body>
 </html>
