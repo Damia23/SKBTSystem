@@ -27,9 +27,10 @@
 <div class="sec" id="sec">
     <h2>SKBT Library Management System</h2>
     <p>This library specifically made for the library operations of Sekolah Kebangsaan (Felda) Bukit Tajau, Maran, Pahang.
-        This system designed to manage all the functions of the library. It helps librarian to maintain the database of new books and the books that are borrowed by members along with their due dates. This system completely automates all your library’s activities. It tracks the records of the number of books in the library, how many books are issued, or how many books have been returned or renewed or late fine charges, etc.<br>
-        You can find books in an instant, issue/reissue books quickly, and manage all the data efficiently and orderly using this system. The purpose of a library management system is to provide instant and accurate data regarding any type of book, thereby saving a lot of time and effort.
-        <a href="Role.jsp" id="btn">Register Now</a><br><br><br></p>
+        This system designed to manage all the functions of the library. It helps librarian to maintain the database of new books and the books that are borrowed by members along with their due dates. This system completely automates all your library’s activities. It tracks the records of the number of books in the library, how many books are issued, or how many books have been returned or renewed or late fine charges, etc.You can find books in an instant, issue/reissue books quickly, and manage all the data efficiently and orderly using this system. The purpose of a library management system is to provide instant and accurate data regarding any type of book, thereby saving a lot of time and effort.<br><br>
+        <a href="TeacherRegister.jsp" id="btn">Teacher</a>
+        <a href="StudentRegister.jsp" id="btn">Student</a>
+        <a href="LibrarianLogin.jsp" id="btn">Librarian</a><br><br></p>
 </div>
 
 <script>
