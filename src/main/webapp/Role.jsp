@@ -10,7 +10,7 @@
 <head>
     <title>Role</title>
     <link rel="stylesheet" type="text/css" href="slide navbar style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 </head>
 <style>
     body{
@@ -20,8 +20,9 @@
         justify-content: center;
         align-items: center;
         min-height: 100vh;
-        font-family: 'Jost', sans-serif;
-        background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+        font-family: 'Poppins', sans-serif;
+        scroll-behavior: smooth;
+        background: linear-gradient(to bottom, #2b1055, #2b1055, #2b1055);
     }
     .main{
         width: 350px;
@@ -71,6 +72,7 @@
     button:hover{
         background: #6d44b8;
     }
+
 
 </style>
 <body>
