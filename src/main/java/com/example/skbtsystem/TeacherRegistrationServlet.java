@@ -31,19 +31,21 @@ public class TeacherRegistrationServlet extends HttpServlet {
             Connection conn = DriverManager.getConnection(url, user, pass);
 
             PreparedStatement st;
-            String query="insert into teacher(teacherId, teacherName,teacherPhone,teacherEmail,teacherPass) values(nextval('librarian_librarianId_seq'),?,?,?,?)";
+            String query="insert into library_user(userid,username,userpass," +
+                    "useremail,userphone,accountid,librarianid) " +
+                    "values(userid_req.nextval,?,?,?,?,20,null)";
             st = conn.prepareStatement(query);
             st.setString(1,tcName);
-            st.setString(2,tcPhone);
+            st.setString(2,tcPass);
             st.setString(3,tcEmail);
-            st.setString(4,tcPass);
-            int row = st.executeUpdate();
+            st.setString(4,tcPhone);
+            int row= st.executeUpdate();
 
-            if (row>0)
-            {
-                out.println("Success");
+            if(row>0){
+                //out.println("Success Registration");
+                response.sendRedirect("TeacherRegister.jsp");
             }else{
-                out.println("Failed");
+                out.println("Failed Registration");
             }
 
 

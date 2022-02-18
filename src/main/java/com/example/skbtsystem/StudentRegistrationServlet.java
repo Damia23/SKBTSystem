@@ -32,19 +32,21 @@ public class StudentRegistrationServlet extends HttpServlet {
             Connection conn = DriverManager.getConnection(url, user, pass);
 
             PreparedStatement st;
-            String query="insert into student(studentId, studentName,studentPhone,studentEmail,studentPass) values(nextval('student_studentId_seq') ,?,?,?,?)";
+            String query="insert into library_user(userid,username,userpass," +
+                    "useremail,userphone,accountid,librarianid) " +
+                    "values(userid_req.nextval,?,?,?,?,30,null)";
             st = conn.prepareStatement(query);
-            st.setString(1,studName);
-            st.setString(2,studPhone);
+            st.setString(1, studName);
+            st.setString(2,studPass);
             st.setString(3,studEmail);
-            st.setString(4,studPass);
-            int row = st.executeUpdate();
+            st.setString(4,studPhone);
+            int row= st.executeUpdate();
 
-            if (row>0)
-            {
-                out.println("Success");
+            if(row>0){
+                // out.println("Success Registration");
+                response.sendRedirect("StudentRegister.jsp");
             }else{
-                out.println("Failed");
+                out.println("Failed Registration");
             }
 
 

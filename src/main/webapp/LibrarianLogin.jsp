@@ -145,7 +145,7 @@
             <label2>Hello Librarian!</label2>
             <input type="email" name="librarianEmail" placeholder="Email" required="">
             <input type="password" name="librarianPass" placeholder="Password" required="">
-            <button>Login</button>
+            <button type="submit">Login</button>
         </form>
     </div>
 
@@ -157,7 +157,7 @@
             <input type="email" name="librarianEmail" placeholder="Email" required="">
             <input type="password" name="librarianPass" placeholder="Password" required="">
 
-            <button type="submit" value="register" formaction="/LibrarianRegistrationServlet">Submit</button>
+            <button type="submit" value="register">Submit</button>
         </form>
     </div>
 </div>

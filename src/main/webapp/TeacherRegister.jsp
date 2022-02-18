@@ -145,7 +145,7 @@
             <label2>Hello Teacher!!</label2>
             <input type="email" name="teacherEmail" placeholder="Email" required="">
             <input type="password" name="teacherPass" placeholder="Password" required="">
-            <button>Login</button>
+            <button type="submit">Login</button>
         </form>
     </div>
 
@@ -156,7 +156,7 @@
             <input type="text" name="teacherPhone" placeholder="Phone number" required="">
             <input type="email" name="teacherEmail" placeholder="Email" required="">
             <input type="password" name="teacherPass" placeholder="Password" required="">
-            <button type="submit" value="register" formaction="/TeacherRegistrationServlet">Submit</button>
+            <button type="submit" value="register">Submit</button>
         </form>
     </div>
 </div>

@@ -31,20 +31,23 @@ public class LibrarianRegistrationServlet extends HttpServlet {
             Connection con = DriverManager.getConnection(url, user, pass);
 
             PreparedStatement st;
-            String query="insert into librarian(librarianid, librarianname,librarianphone,librarianemail,librarianpass) values(nextval('librarian_librarianId_seq'),?,?,?,?)";
+            String query="insert into library_user(userid,username,userpass," +
+                    "useremail,userphone,accountid,librarianid) " +
+                    "values(userid_req.nextval,?,?,?,?,10,null)";
             st = con.prepareStatement(query);
             st.setString(1,libName);
-            st.setString(2,libPhone);
+            st.setString(2,libPass);
             st.setString(3,libEmail);
-            st.setString(4,libPass);
-            int row = st.executeUpdate();
+            st.setString(4,libPhone);
+            int row= st.executeUpdate();
 
-            if (row>0)
-            {
-                out.println("Success");
+            if(row>0){
+                //out.println("Success Registration");
+                response.sendRedirect("LibrarianLogin.jsp");
             }else{
-                out.println("Failed");
+                out.println("Failed Registration");
             }
+
 
 
         } catch (Exception e) {
