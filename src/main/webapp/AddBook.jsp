@@ -8,14 +8,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Add New Book</title>
+    <title>Add Book Details</title>
 </head>
 
 <style>
 
-    body{
-        background-color:whitesmoke;
+
+    body {
+        background-image: url("images/image.png");
     }
+
+
     .get-in-touch {
         max-width: 800px;
         margin: 50px auto;
@@ -44,7 +47,7 @@
         text-transform: uppercase;
         letter-spacing: 3px;
         font-size: 1.0em;
-        line-height:1px;
+        line-height:10px;
         padding-bottom: 25px;
         color: #5543ca;
         background: #5543ca;
@@ -72,23 +75,18 @@
     .contact-form .input-text:focus {
         outline: none;
     }
-    .contact-form .input-text:focus + .label,
-    .contact-form .input-text.not-empty + .label {
-        -webkit-transform: translateY(-24px);
-        transform: translateY(-24px);
-    }
+
+
     .contact-form .label {
         position: absolute;
         left: 20px;
         bottom: 10px;
         font-size: 18px;
-        line-height: 26px;
+        line-height: 80px;
         font-weight: 400;
-        color: #5543ca;
+        color: black;
         cursor: text;
-        transition: -webkit-transform .2s ease-in-out;
-        transition: transform .2s ease-in-out,
-        -webkit-transform .2s ease-in-out;
+
     }
     .contact-form .submit-btn {
         display: inline-block;
@@ -117,10 +115,7 @@
     <h1 class="title">SKBT Library Book Directories</h1>
     <h3 class="title2">ADD NEW BOOK DETAILS FORM</h3>
     <form method="post" action="AddbookServlet" class="contact-form row">
-        <div class="form-field col-lg-6">
-            <input id="bookId" name="bookId" class="input-text js-input" type="text" required>
-            <label class="label" for="bookId">Book Id</label>
-        </div>
+
         <div class="form-field col-lg-6">
             <input id="bookTitle" name="bookTitle" class="input-text js-input" type="text" required>
             <label class="label" for="bookTitle">Book Title</label>
@@ -148,6 +143,9 @@
     </form>
 
 </section>
+
 </body>
 </html>
+
+
 

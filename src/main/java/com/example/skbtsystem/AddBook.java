@@ -2,14 +2,15 @@ package com.example.skbtsystem;
 
 public class AddBook implements java.io.Serializable
 {
-    public String bookId;
+    public int bookId;
     public String bookTitle;
     public String bookPubYear;
     public String bookAuthor;
-    public String bookAmount;
+    public int bookAmount;
     public String bookPublisher;
 
-    public AddBook(String bookId, String bookTitle, String bookPubYear, String bookAuthor, String bookAmount, String bookPublisher) {
+    public AddBook(int bookId, String bookTitle, String bookPubYear, String bookAuthor, int bookAmount,
+                   String bookPublisher) {
         this.bookId = bookId;
         this.bookTitle = bookTitle;
         this.bookPubYear = bookPubYear;
@@ -18,11 +19,11 @@ public class AddBook implements java.io.Serializable
         this.bookPublisher = bookPublisher;
     }
 
-    public String getBookId() {
+    public int getBookId() {
         return bookId;
     }
 
-    public void setBookId(String bookId) {
+    public void setBookId(int bookId) {
         this.bookId = bookId;
     }
 
@@ -50,11 +51,11 @@ public class AddBook implements java.io.Serializable
         this.bookAuthor = bookAuthor;
     }
 
-    public String getBookAmount() {
+    public int getBookAmount() {
         return bookAmount;
     }
 
-    public void setBookAmount(String bookAmount) {
+    public void setBookAmount(int bookAmount) {
         this.bookAmount = bookAmount;
     }
 
@@ -65,4 +66,6 @@ public class AddBook implements java.io.Serializable
     public void setBookPublisher(String bookPublisher) {
         this.bookPublisher = bookPublisher;
     }
+
 }
+
