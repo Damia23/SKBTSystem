@@ -267,8 +267,8 @@
                     Class.forName(DB_DRIVER);
                     conn = DriverManager.getConnection(DB_HOST, DB_USER, DB_PASSWORD);
                     stat = conn.createStatement();
-                    String data =  "select * from library_user lr join borrow_returninfo br " +
-                            "on lr.userid = br.userid join book b on br.bookid = b.bookid order by borrowreturnid";
+                    String data =  "select * from library_user lr join borrowreturninfo br " +
+                            "on lr.userid = br.userid join book b on br.bookid = b.bookid order by borrowid";
                     res = stat.executeQuery(data);
                     while(res.next()){
                 %>
