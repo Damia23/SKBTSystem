@@ -90,7 +90,7 @@
     <label2>You have the authority to manage the library operations</label2>
     <a href="ViewBook.jsp"><button>Book Lists</button></a>
     <a href="viewBorrow.jsp"><button>Borrow Lists</button></a>
-    <a href="librarianBorrow.jsp"><button>Borrow Book</button></a>
+    <a href="LibrarianBorrow.jsp"><button>Borrow Book</button></a>
     <a href="viewUser.jsp"><button>Library User Lists</button></a>
     <a href='TeacherLogout.jsp'><button>Log out</button></a>
 </div>
