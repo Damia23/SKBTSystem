@@ -28,7 +28,7 @@
             session.setAttribute("useremail", useremail);
             //out.println("welcome " + teacherEmail);
             //out.println("<a href='logout.jsp'>Log out</a>");
-            response.sendRedirect("StudentDashboard.jsp");
+            response.sendRedirect("TeacherRegister.jsp");
         } else
         {
             response.sendRedirect("TeacherRegister.jsp");
