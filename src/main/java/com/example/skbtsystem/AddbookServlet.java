@@ -42,10 +42,10 @@ public class AddbookServlet extends HttpServlet {
             int bookamount = Integer.parseInt(request.getParameter("bookAmount"));
             String bookpublisher = request.getParameter("bookPublisher");
 
-            Class.forName("oracle.jdbc.driver.OracleDriver");
-            String url = "jdbc:oracle:thin:@localhost:1521:XE";
-            String user = "SKBTLIBRARY";
-            String pass = "system";
+            Class.forName("org.postgresql.Driver");
+            String url = "jdbc:postgresql://ec2-3-212-143-188.compute-1.amazonaws.com:5432/d9pq1r2tte9jfs";
+            String user = "wzhkegxdhdsbgm";
+            String pass = "2de0ec5650e40e6383f4ad61c98e44dec650a6a8f9d79fdf03efa59408d53f99";
             Connection con = DriverManager.getConnection(url, user, pass);
 
             String query="INSERT into book (bookid,booktitle,bookauthor,bookamount,bookpublisher,bookpubyear) " +
