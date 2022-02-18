@@ -80,7 +80,6 @@
                 <td style="color:black"><%=res.getString("useremail")%></td>
                 <td style="color:black"><%=res.getString("userphone")%></td>
                 <td style="color:black"><%=res.getString("accountname")%></td>
-                <td style="color:black"><%=res.getString("librarianid")%></td>
 
             </tr>
 
