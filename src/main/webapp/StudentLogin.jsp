@@ -23,9 +23,10 @@
     stat = conn.createStatement();
     String data = "select * from library_user where useremail='"+ useremail +"' and userpass='"+ userpass +"'";
     res = stat.executeQuery(data);
-    if (res.next()) {
-        int teacherID = res.getInt("accountid");
-        if(teacherID == 3)
+    if (res.next())
+    {
+        int studentID = res.getInt("accountid");
+        if(studentID == 3)
         {
             session.setAttribute("useremail", useremail);
             //out.println("welcome " + teacherEmail);

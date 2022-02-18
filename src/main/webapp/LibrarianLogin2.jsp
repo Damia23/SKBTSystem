@@ -24,8 +24,8 @@
     String data = "select * from library_user where useremail='"+ useremail +"' and userpass='"+ userpass +"'";
     res = stat.executeQuery(data);
     if (res.next()) {
-        int teacherID = res.getInt("accountid");
-        if(teacherID == 1)
+        int librarianID = res.getInt("accountid");
+        if(librarianID == 1)
         {
             session.setAttribute("useremail", useremail);
             //out.println("welcome " + teacherEmail);
