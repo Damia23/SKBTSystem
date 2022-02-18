@@ -69,7 +69,7 @@
 
             <div class="form-group">
                 <label>Amount</label>
-                <input type="text" class="form-control" name="bookAmount" value='<%=res.getString("bookamount") %>'/>
+                <input type="text" class="form-control" name="bookAmount" value='<%=res.getInt("bookamount") %>'/>
             </div>
 
             <div class="form-group">
@@ -92,16 +92,16 @@
     String b = request.getParameter("bookTitle");
     String c = request.getParameter("bookPubYear");
     String d = request.getParameter("bookAuthor");
-    String e = request.getParameter("bookAmount");
+    int e = Integer.parseInt(request.getParameter("bookAmount"));
     String f = request.getParameter("bookPublisher");
 
-    if(a!=null && b!=null && c!=null && d!=null && e!=null && f!=null){
+    if(a!=null && b!=null && c!=null && d!=null && f!=null){
         String query = "update book set booktitle=?,bookpubyear=?,bookauthor=?, bookamount=?, bookpublisher=? where bookid='"+a+"'";
         stmt = conn.prepareStatement(query);
         stmt.setString(1,b);
         stmt.setString(2,c);
         stmt.setString(3,d);
-        stmt.setString(4,e);
+        stmt.setInt(4,e);
         stmt.setString(5,f);
 
 
