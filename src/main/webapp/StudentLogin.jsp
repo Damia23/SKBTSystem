@@ -23,18 +23,13 @@
     res = stat.executeQuery(data);
     if (res.next()) {
         int studentID = res.getInt("accountid");
-        if(studentID == 3)
-        {
+        if (studentID == 3) {
             session.setAttribute("useremail", useremail);
             //out.println("welcome " + teacherEmail);
             //out.println("<a href='logout.jsp'>Log out</a>");
             response.sendRedirect("StudentDashboard.jsp");
-        } else
-        {
+        } else {
             response.sendRedirect("StudentRegister.jsp");
         }
-    } else {
-        //out.println("Invalid password <a href='index.jsp'>try again</a>");
-        response.sendRedirect("StudentRegister.jsp");
     }
 %>

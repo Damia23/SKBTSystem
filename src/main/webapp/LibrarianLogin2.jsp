@@ -33,8 +33,5 @@
         {
             response.sendRedirect("LibrarianLogin.jsp");
         }
-    } else {
-        //out.println("Invalid password <a href='index.jsp'>try again</a>");
-        response.sendRedirect("LibrarianLogin.jsp");
     }
 %>
