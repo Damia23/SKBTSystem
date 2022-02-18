@@ -21,24 +21,17 @@
     ResultSet res ;
     conn = DriverManager.getConnection(url, user, pass);
     stat = conn.createStatement();
-    String data = "select * from library_user where useremail='"+ useremail +"' and userpass='"+ userpass +"'";
+    String data = "select * from library_user and accountid= 2";
     res = stat.executeQuery(data);
     if (res.next()) {
-        int teacherID = res.getInt("accountid");
-        if(teacherID == 2)
-        {
-            session.setAttribute("useremail", useremail);
-            //out.println("welcome " + teacherEmail);
-            //out.println("<a href='logout.jsp'>Log out</a>");
-            response.sendRedirect("TeacherDashboard.jsp");
-
-
-        } else
-        {
-            response.sendRedirect("TeacherRegister.jsp");
-        }
-    } else {
-        //out.println("Invalid password <a href='index.jsp'>try again</a>");
-        response.sendRedirect("TeacherRegister.jsp");
+        session.setAttribute("useremail", useremail);
+        //out.println("welcome " + teacherEmail);
+        //out.println("<a href='logout.jsp'>Log out</a>");
+        response.sendRedirect("TeacherDashboard.jsp");
     }
+            else {
+
+        //out.println("Invalid password <a href='index.jsp'>try again</a>");
+        response.sendRedirect("TeacherRegister.jsp");}
+
 %>
