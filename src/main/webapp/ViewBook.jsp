@@ -11,8 +11,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
-
-<html>
 <head>
     <title>Book Directories</title>
 
