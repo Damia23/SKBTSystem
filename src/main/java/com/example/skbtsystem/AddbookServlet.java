@@ -49,7 +49,7 @@ public class AddbookServlet extends HttpServlet {
             Connection con = DriverManager.getConnection(url, user, pass);
 
             String query="INSERT into book (bookid,booktitle,bookauthor,bookamount,bookpublisher,bookpubyear) " +
-                    "values(bookid_seq.nextval,?,?,?,?,?)";
+                    "values(nextval('bookid_seq'),?,?,?,?,?)";
             PreparedStatement st;
             st = con.prepareStatement(query);
             st.setString(1,booktitle);
