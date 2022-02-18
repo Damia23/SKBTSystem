@@ -26,7 +26,7 @@
 <header>
     <nav class="navbar navbar-expand-md navbar-dark" style="background-color: plum">
         <div style="text-align: center;">
-            <a href="index.jsp" class="navbar-brand" style="color:black"> SKBT Library Directories </a>
+            <a href="LibrarianDashboard.jsp" class="navbar-brand" style="color:black"> SKBT Library Directories </a>
         </div>
     </nav>
 </header>

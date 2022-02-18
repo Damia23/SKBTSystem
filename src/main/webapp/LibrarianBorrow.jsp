@@ -91,14 +91,14 @@
             margin-bottom: 20px;
             background: transparent;
             border: none;
-            border-bottom: 1px solid #000000;
+            border-bottom: 1px solid black;
             text-align: center;
         }
         input::placeholder {
-            color: #000000;
+            color: white;
         }
         option {
-            background: black;
+            background: white;
             border: none;
         }
         .metod {
@@ -111,7 +111,7 @@
             margin: 20px auto 0;
             border: none;
             border-radius: 5px;
-            background-color: #000;
+            background-color: white;
             background-image: linear-gradient(125deg,#a72879,#5543ca);
             font-size: 14px;
             font-weight: 600;
@@ -157,20 +157,27 @@
 <div class="main-block">
     <h1>Borrow Book Form</h1><br>
     <form action="LibrarianBorrowServlet" method="post">
-        <div>Book ID<br>
-            <input type="text" name="bookID">
-            <br>Librarian ID<br>
-            <input type="text" name="librarianID">
+
+        <div>User ID<br>
+            <input type="text" name="userID">
             <br>Number of Books Borrow<br>
             <input type="text" name="numberBorrow">
         </div>
         <div>Date of Borrow Book<br>
             <input type="date" name="borrowDate">
-            <br>Date of Return Book<br>
+            <br>Date Should Return Book<br>
             <input type="date" name="returnDate">
+            <br><label for="bookID">Choose Book:</label><br>
+            <select id="bookID" name="bookID">
+                <option value="101">Bahasa Mandarin Permulaan 1</option>
+                <option value="102">Formula of Love-Twice</option>
+                <option value="103">Hello Universe</option>
+                <option value="104">99 kata Lokman</option>
+            </select>
+
         </div>
         <button type="submit" class="button1">Borrow</button>
-        <button href="LibrarianDashboard.jsp" class="button2">Cancel</button>
+        <button href="viewBorrow.jsp" class="button2">Cancel</button>
     </form>
 </div>
 
@@ -182,11 +189,12 @@
 
     }
     else{
-        session.setAttribute("bookID",request.getParameter("bookID"));
-        session.setAttribute("librarianID",request.getParameter("librarianID"));
+
+        session.setAttribute("userID",request.getParameter("userID"));
         session.setAttribute("numberBorrow",request.getParameter("numberBorrow"));
         session.setAttribute("borrowDate",request.getParameter("borrowDate"));
         session.setAttribute("returnDate",request.getParameter("returnDate"));
+        session.setAttribute("bookID",request.getParameter("bookID"));
     }
 %>
 </body>
