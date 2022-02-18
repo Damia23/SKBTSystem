@@ -10,8 +10,8 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    String useremail = request.getParameter("useremail");
-    String userpass = request.getParameter("userpass");
+    String useremail = request.getParameter("teacherEmail");
+    String userpass = request.getParameter("teacherPass");
     Class.forName("org.postgresql.Driver");
     String url = "jdbc:postgresql://ec2-3-212-143-188.compute-1.amazonaws.com:5432/d9pq1r2tte9jfs";
     String user = "wzhkegxdhdsbgm";
