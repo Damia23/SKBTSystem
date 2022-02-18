@@ -33,7 +33,7 @@ public class TeacherRegistrationServlet extends HttpServlet {
             PreparedStatement st;
             String query="insert into library_user(userid,username,userpass," +
                     "useremail,userphone,accountid) " +
-                    "values(nextval('fk_accidlibuser'),?,?,?,?,20)";
+                    "values(nextval('library_user_userid_seq'),?,?,?,?,2)";
             st = conn.prepareStatement(query);
             st.setString(1,tcName);
             st.setString(2,tcPass);
