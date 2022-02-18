@@ -9,8 +9,7 @@
 <%
     if ((session.getAttribute("librarianEmail") == null) || (session.getAttribute("librarianEmail") == "")) {
 %>
-You are not logged in<br/>
-<a href="LibrarianLogin.jsp">Please Login</a>
+
 <%} else {
 %>
 
@@ -87,7 +86,7 @@ You are not logged in<br/>
 </style>
 <body>
 <div class="main">
-    <label>Hello, <%=session.getAttribute("librarianEmail")%>!</label>
+    <label>Hello, <%=session.getAttribute("useremail")%>!</label>
     <label2>You have the authority to manage the library operations</label2>
     <a href="ViewBook.jsp"><button>Book</button></a>
     <a href="LibrarianBorrow.jsp"><button>Borrow</button></a>

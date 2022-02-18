@@ -9,8 +9,7 @@
 <%
     if ((session.getAttribute("teacherEmail") == null) || (session.getAttribute("teacherEmail") == "")) {
 %>
-You are not logged in<br/>
-<a href="teacherLogin.jsp">Please Login</a>
+
 <%} else {
 %>
 <%
