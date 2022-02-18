@@ -16,17 +16,24 @@
     String url = "jdbc:postgresql://ec2-3-212-143-188.compute-1.amazonaws.com:5432/d9pq1r2tte9jfs";
     String user = "wzhkegxdhdsbgm";
     String pass = "2de0ec5650e40e6383f4ad61c98e44dec650a6a8f9d79fdf03efa59408d53f99";
-    Connection con = DriverManager.getConnection(url, user, pass);
-    Statement st = con.createStatement();
-    ResultSet rs;
-    rs = st.executeQuery("select * from library_user where useremail='" + useremail + "' and userpass='" + userpass + "'");
-    if (rs.next()) {
-        session.setAttribute("useremail",useremail);
+    Connection conn ;
+    Statement stat ;
+    ResultSet res ;
+    conn = DriverManager.getConnection(url, user, pass);
+    stat = conn.createStatement();
+    String data = "select * from library_user where useremail='"+ useremail +"' and userpass='"+ userpass +"' " +
+            "and accountid = 1";
+    res = stat.executeQuery(data);
+    if (res.next()) {
+        session.setAttribute("useremail", useremail);
         //out.println("welcome " + teacherEmail);
         //out.println("<a href='logout.jsp'>Log out</a>");
         response.sendRedirect("StudentDashboard.jsp");
-    } else {
-        //out.println("Invalid password <a href='index.jsp'>try again</a>");
-        response.sendRedirect("StudentRegister.jsp");
     }
+    else {
+
+        //out.println("Invalid password <a href='index.jsp'>try again</a>");
+        response.sendRedirect("StudentLogin.jsp");
+    }
+
 %>

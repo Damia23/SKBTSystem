@@ -33,6 +33,7 @@
             else {
 
         //out.println("Invalid password <a href='index.jsp'>try again</a>");
-        response.sendRedirect("TeacherRegister.jsp");}
+        response.sendRedirect("TeacherRegister.jsp");
+            }
 
 %>

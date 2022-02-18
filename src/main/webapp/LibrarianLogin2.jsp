@@ -10,8 +10,8 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    String useremail = request.getParameter("useremail");
-    String userpass = request.getParameter("userpass");
+    String useremail = request.getParameter("librarianEmail");
+    String userpass = request.getParameter("librarianPass");
     Class.forName("org.postgresql.Driver");
     String url = "jdbc:postgresql://ec2-3-212-143-188.compute-1.amazonaws.com:5432/d9pq1r2tte9jfs";
     String user = "wzhkegxdhdsbgm";
@@ -21,21 +21,17 @@
     ResultSet res ;
     conn = DriverManager.getConnection(url, user, pass);
     stat = conn.createStatement();
-    String data = "select * from library_user where useremail='"+ useremail +"' and userpass='"+ userpass +"'";
+    String data = "select * from library_user where useremail='"+ useremail +"' and userpass='"+ userpass +"' " +
+            "and accountid = 1";
     res = stat.executeQuery(data);
     if (res.next()) {
-        int librarianID = res.getInt("accountid");
-        if(librarianID == 1)
-        {
-            session.setAttribute("useremail", useremail);
-            //out.println("welcome " + teacherEmail);
-            //out.println("<a href='logout.jsp'>Log out</a>");
-            response.sendRedirect("LibrarianDashboard.jsp");
-        } else
-        {
-            response.sendRedirect("LibrarianLogin.jsp");
-        }
-    } else {
+        session.setAttribute("useremail", useremail);
+        //out.println("welcome " + teacherEmail);
+        //out.println("<a href='logout.jsp'>Log out</a>");
+        response.sendRedirect("LibrarianDashboard.jsp");
+    }
+    else {
+
         //out.println("Invalid password <a href='index.jsp'>try again</a>");
         response.sendRedirect("LibrarianLogin.jsp");
     }
