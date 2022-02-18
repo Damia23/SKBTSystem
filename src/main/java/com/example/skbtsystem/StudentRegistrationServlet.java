@@ -33,8 +33,8 @@ public class StudentRegistrationServlet extends HttpServlet {
 
             PreparedStatement st;
             String query="insert into library_user(userid,username,userpass," +
-                    "useremail,userphone,accountid,librarianid) " +
-                    "values(userid_req.nextval,?,?,?,?,30,null)";
+                    "useremail,userphone,accountid) " +
+                    "values(userid_req.nextval,?,?,?,?,30)";
             st = conn.prepareStatement(query);
             st.setString(1, studName);
             st.setString(2,studPass);

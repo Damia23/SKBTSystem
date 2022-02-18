@@ -32,8 +32,8 @@ public class LibrarianRegistrationServlet extends HttpServlet {
 
             PreparedStatement st;
             String query="insert into library_user(userid,username,userpass," +
-                    "useremail,userphone,accountid,librarianid) " +
-                    "values(userid_req.nextval,?,?,?,?,10,null)";
+                    "useremail,userphone,accountid) " +
+                    "values(userid_req.nextval,?,?,?,?,10)";
             st = con.prepareStatement(query);
             st.setString(1,libName);
             st.setString(2,libPass);
