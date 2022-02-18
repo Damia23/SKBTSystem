@@ -48,11 +48,9 @@
             <tr>
                 <th class="text-center" style="color:black">User ID</th>
                 <th class="text-center" style="color:black">User Name</th>
-                <th class="text-center" style="color:black">User Password</th>
                 <th class="text-center" style="color:black">User Email</th>
                 <th class="text-center" style="color:black">User Phone</th>
                 <th class="text-center" style="color:black">Role name</th>
-                <th class="text-center" style="color:black">Authorize By:</th>
 
             </tr>
             </thead>
@@ -76,7 +74,6 @@
             <tr>
                 <td style="color:black"><%=res.getString("userid")%></td>
                 <td style="color:black"><%=res.getString("username")%></td>
-                <td style="color:black"><%=res.getString("userpass")%></td>
                 <td style="color:black"><%=res.getString("useremail")%></td>
                 <td style="color:black"><%=res.getString("userphone")%></td>
                 <td style="color:black"><%=res.getString("accountname")%></td>
