@@ -25,15 +25,16 @@
     res = stat.executeQuery(data);
     if (res.next()) {
         int teacherID = res.getInt("accountid");
-        if(teacherID == 2)
+        if(teacherID != 2)
+        {
+            response.sendRedirect("TeacherRegister.jsp");
+
+        } else
         {
             session.setAttribute("useremail", useremail);
             //out.println("welcome " + teacherEmail);
             //out.println("<a href='logout.jsp'>Log out</a>");
             response.sendRedirect("TeacherDashboard.jsp");
-        } else
-        {
-            response.sendRedirect("TeacherRegister.jsp");
         }
     } else {
         //out.println("Invalid password <a href='index.jsp'>try again</a>");
