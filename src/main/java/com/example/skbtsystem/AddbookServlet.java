@@ -39,7 +39,7 @@ public class AddbookServlet extends HttpServlet {
             String booktitle = request.getParameter("bookTitle");
             String bookpubyear = request.getParameter("bookPubYear");
             String bookauthor = request.getParameter("bookAuthor");
-            int bookamount = Integer.parseInt(request.getParameter("bookAmount"));
+            String bookamount = request.getParameter("bookAmount");
             String bookpublisher = request.getParameter("bookPublisher");
 
             Class.forName("org.postgresql.Driver");
@@ -54,7 +54,7 @@ public class AddbookServlet extends HttpServlet {
             st = con.prepareStatement(query);
             st.setString(1,booktitle);
             st.setString(2,bookauthor);
-            st.setInt(3,bookamount);
+            st.setString(3,bookamount);
             st.setString(4,bookpublisher);
             st.setString(5,bookpubyear);
             int row= st.executeUpdate();//return no of row effected
