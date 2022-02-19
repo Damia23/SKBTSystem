@@ -167,7 +167,11 @@
             try {
                 //Integer bookID = Integer.valueOf(request.getParameter("bookID"));
 //Class.forName("com.mysql.jdbc.Driver").newInstance();
-                Connection connection = DriverManager.getConnection ("jdbc:postgresql://ec2-3-212-143-188.compute-1.amazonaws.com:5432/d9pq1r2tte9jfs");
+                Class.forName("org.postgresql.Driver");
+                String dbURL = "jdbc:postgresql://ec2-3-212-143-188.compute-1.amazonaws.com:5432/d9pq1r2tte9jfs";
+                String user = "wzhkegxdhdsbgm";
+                String pass = "2de0ec5650e40e6383f4ad61c98e44dec650a6a8f9d79fdf03efa59408d53f99";
+                Connection connection = DriverManager.getConnection(dbURL, user, pass);
 
                 Statement statement = connection.createStatement();
 
