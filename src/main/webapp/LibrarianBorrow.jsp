@@ -1,4 +1,7 @@
-<%--
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.DriverManager" %>
+<%@ page import="java.sql.Statement" %>
+<%@ page import="java.sql.ResultSet" %><%--
   Created by IntelliJ IDEA.
   User: User
   Date: 26/1/2022
@@ -6,6 +9,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%ResultSet resultset =null;%>
+
 <html>
 <head>
     <title> BULOH INC BORROW BOOK FORM </title>
@@ -158,32 +163,49 @@
     <h1>Borrow Book Form</h1><br>
     <form action="LibrarianBorrowServlet" method="post">
 
+        <%
+            try {
+                //Integer bookID = Integer.valueOf(request.getParameter("bookID"));
+//Class.forName("com.mysql.jdbc.Driver").newInstance();
+                Connection connection = DriverManager.getConnection ("jdbc:postgresql://ec2-3-212-143-188.compute-1.amazonaws.com:5432/d9pq1r2tte9jfs");
+
+                Statement statement = connection.createStatement();
+
+                resultset = statement.executeQuery("select * from book");
+        %>
+
         <div>User ID<br>
             <input type="text" name="userID">
             <br>Number of Books Borrow<br>
             <input type="text" name="numberBorrow">
         </div>
         <div>Date of Borrow Book<br>
+
             <input type="date" name="borrowDate">
-            <br>Date Should Return Book<br>
+            <br>Date of Return Book<br>
             <input type="date" name="returnDate">
             <br><label for="bookID">Choose Book:</label><br>
-            <select id="bookID" name="bookID">
-                <option value="101">Bahasa Mandarin Permulaan 1</option>
-                <option value="102">Formula of Love-Twice</option>
-                <option value="103">Hello Universe</option>
-                <option value="104">99 kata Lokman</option>
+            <select id="bookId" name="bookId">
+
+                <% while (resultset.next()) { %>
+                <option> <%= resultset.getString("bookID")%> </option>
+                <% } %>
+
             </select>
 
         </div>
         <button type="submit" class="button1">Borrow</button>
-        <button href="viewBorrow.jsp" class="button2">Cancel</button>
+        <button href="index.jsp" class="button2">Cancel</button>
+
+        <% } finally {
+
+        } %>
     </form>
 </div>
 
 
 <%
-    String myText = request.getParameter("bookID");
+    String myText = request.getParameter("bookId");
 
     if(myText == null){
 
@@ -194,8 +216,10 @@
         session.setAttribute("numberBorrow",request.getParameter("numberBorrow"));
         session.setAttribute("borrowDate",request.getParameter("borrowDate"));
         session.setAttribute("returnDate",request.getParameter("returnDate"));
-        session.setAttribute("bookID",request.getParameter("bookID"));
+        session.setAttribute("bookId",request.getParameter("bookId"));
     }
 %>
 </body>
 </html>
+
+

@@ -22,10 +22,9 @@ public class LibrarianBorrowServlet extends HttpServlet
         try{
             Integer userID = Integer.valueOf(request.getParameter("userID"));
             Integer numberBorrow = Integer.valueOf(request.getParameter("numberBorrow"));
-            Date borrowDate = Date.valueOf(request.getParameter("borrowDate"));
-            Date returnDate = Date.valueOf(request.getParameter ("returnDate"));
-            Integer bookID = Integer.valueOf(request.getParameter("bookID"));
-            Date returnLateDate = Date.valueOf(request.getParameter("returnLateDate"));
+            String borrowDate = request.getParameter("borrowDate");
+            String returnDate = request.getParameter ("returnDate");
+            String bookId = request.getParameter ("bookId");
 
             Class.forName("org.postgresql.Driver");
             String dbURL = "jdbc:postgresql://ec2-3-212-143-188.compute-1.amazonaws.com:5432/d9pq1r2tte9jfs";
@@ -34,22 +33,22 @@ public class LibrarianBorrowServlet extends HttpServlet
             Connection conn = DriverManager.getConnection(dbURL, user, pass);
 
             PreparedStatement st;
-            String query="insert into borrowreturninfo(borrowreturniD,numberborrow,borrowdate," +
-                    "returndate,returnLateDate,userid,bookid) " +
-                    "values(borrowreturnid_seq.nextval,?,?,?,?,?,?)";
+            String query="insert into borrowreturninfo( borrowreturnID,numberBorrow,borrowDate,returnDate,returnlatedate, userid, bookId)" +
+                    " values( default ,?,?,?,?,?,?)";
             st = conn.prepareStatement(query);
 
-            st.setInt(1,numberBorrow);
-            st.setDate(2,borrowDate);
-            st.setDate(3,returnDate);
-            st.setDate(4,returnLateDate);
-            st.setInt(5,userID);
-            st.setInt(6,bookID);
+            st.setInt(1,userID);
+            st.setInt(2,numberBorrow);
+            st.setString(3,borrowDate);
+            st.setString(4,returnDate);
+            st.setString(5,bookId);
             int row= st.executeUpdate();
 
             if(row>0){
                 out.println("Record inserted");
-                response.sendRedirect("viewBorrow.jsp");
+                out.println("<html><body> <br/><br/>");
+                out.println("<a href='viewBorrow.jsp'>View Borrow List</a>");
+                out.println("</body></html>");
             }else{
                 out.println("Record failed");
             }
