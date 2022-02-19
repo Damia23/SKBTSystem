@@ -1,68 +1,58 @@
 package com.example.skbtsystem;
 
+
 import java.sql.Date;
 
 public class BorrowReturn
 {
-    public String borrowID, numberBorrow;
+    public int borrowreturnID, numberBorrow;
     public Date borrowDate, returnDate, returnLateDate;
 
-    public BorrowReturn(String borrowID, String numberBorrow, Date borrowDate, Date returnDate, Date returnLateDate)
-    {
-        this.borrowID = borrowID;
+    public BorrowReturn(int borrowreturnID, int numberBorrow, Date borrowDate, Date returnDate, Date returnLateDate) {
+        this.borrowreturnID = borrowreturnID;
         this.numberBorrow = numberBorrow;
         this.borrowDate = borrowDate;
         this.returnDate = returnDate;
         this.returnLateDate = returnLateDate;
     }
 
-    public String getBorrowID()
-    {
-        return borrowID;
+    public int getBorrowreturnID() {
+        return borrowreturnID;
     }
 
-    public void setBorrowID(String borrowID)
-    {
-        this.borrowID = borrowID;
+    public void setBorrowreturnID(int borrowreturnID) {
+        this.borrowreturnID = borrowreturnID;
     }
 
-    public String getNumberBorrow()
-    {
+    public int getNumberBorrow() {
         return numberBorrow;
     }
 
-    public void setNumberBorrow(String numberBorrow)
-    {
+    public void setNumberBorrow(int numberBorrow) {
         this.numberBorrow = numberBorrow;
     }
 
-    public Date getBorrowDate()
-    {
+    public Date getBorrowDate() {
         return borrowDate;
     }
 
-    public void setBorrowDate(Date borrowDate)
-    {
+    public void setBorrowDate(Date borrowDate) {
         this.borrowDate = borrowDate;
     }
 
-    public Date getReturnDate()
-    {
+    public Date getReturnDate() {
         return returnDate;
     }
 
-    public void setReturnDate(Date returnDate)
-    {
+    public void setReturnDate(Date returnDate) {
         this.returnDate = returnDate;
     }
 
-    public Date getReturnLateDate()
-    {
+    public Date getReturnLateDate() {
         return returnLateDate;
     }
 
-    public void setReturnLateDate(Date returnLateDate)
-    {
+    public void setReturnLateDate(Date returnLateDate) {
         this.returnLateDate = returnLateDate;
     }
 }

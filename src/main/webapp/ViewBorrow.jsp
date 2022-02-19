@@ -228,7 +228,7 @@
 
 <div class="container-xl">
     <div class="table-responsive">
-        <a href="index.jsp" class="btn btn-info">HOME</a>
+        <a href="LibrarianDashboard.jsp" class="btn btn-info">HOME</a>
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
