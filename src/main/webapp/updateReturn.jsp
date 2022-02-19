@@ -95,7 +95,7 @@
     String e = request.getParameter("returnDate");
     String f = request.getParameter("returnLateDate");
 
-    if (a != null && b != 0 && c != null && d != null && e != null && f != null) {
+    if (a != null && b != null && c != null && d != null && e != null && f != null) {
         String query = "update borrowreturninfo set bookId=?,numberBorrow=?,borrowDate=?, returnDate=?, returnLateDate=? where borrowreturnID='" + a + "'";
         stmt = conn.prepareStatement(query);
         stmt.setInt(1, b);
