@@ -93,7 +93,7 @@
     <a href="LibrarianBorrow.jsp"><button>Borrow Book</button></a>
     <a href="viewUser.jsp"><button>Library User Lists</button></a>
     <a href="ManageFine.jsp"><button>Fine</button></a>
-    <a href='TeacherLogout.jsp'><button>Log out</button></a>
+    <a href='LibrarianLogout.jsp'><button>Log out</button></a>
 </div>
 </body>
 </html>
