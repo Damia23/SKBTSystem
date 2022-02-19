@@ -88,9 +88,8 @@
 <div class="main">
     <label>Hello, <%=session.getAttribute("useremail")%>!</label>
     <label2>You can borrow and return book at your fingertips!</label2>
+    <a href="ViewBookStudentTeacher.jsp"><button>View Book</button></a>
     <a href="StudentBorrow.jsp"><button>Borrow Book</button></a>
-    <a href="StudentReturn.jsp"><button>Return Book</button></a>
-    <a href="StudentFine.jsp"><button>Fine</button></a>
     <a href='StudentLogout.jsp'><button>Log out</button></a>
 </div>
 </body>

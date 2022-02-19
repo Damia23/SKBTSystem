@@ -26,7 +26,7 @@
     <!-- <div class="alert alert-success" *ngIf='message'>{{message}}</div> -->
 
     <div class="container">
-        <h3 class="text-center">View Book Details</h3>
+        <h3 class="text-center">Update Book Details</h3>
         <hr>
         <%
 
