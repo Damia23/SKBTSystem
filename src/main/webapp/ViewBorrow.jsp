@@ -225,11 +225,14 @@
 </head>
 
 <body>
+
 <div class="container-xl">
     <div class="table-responsive">
+        <a href="index.jsp" class="btn btn-info">HOME</a>
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
+
                     <div class="col-sm-6">
                         <h2>List of Borrowers</h2>
                     </div>
@@ -247,11 +250,10 @@
 								<label for="selectAll"></label>
 							</span>
                     </th>
-                    <th class="text-center" style="color:black">Book ID</th>
-
+                    <th class="text-center" style="color:black">Book Title</th>
                     <th class="text-center" style="color:black">Number of Books Borrowed</th>
                     <th class="text-center" style="color:black">Borrow Date</th>
-                    <th class="text-center" style="color:black">Return Date</th>
+                    <th class="text-center" style="color:black">Date Must Return</th>
                     <th class="text-center" style="color:black">Action</th>
                 </tr>
                 </thead>
@@ -267,8 +269,7 @@
                     Class.forName(DB_DRIVER);
                     conn = DriverManager.getConnection(DB_HOST, DB_USER, DB_PASSWORD);
                     stat = conn.createStatement();
-                    String data =  "select * from library_user lr join borrowreturninfo br " +
-                            "on lr.userid = br.userid join book b on br.bookid = b.bookid order by borrowid";
+                    String data =  "select * from borrowreturninfo br join book b on br.bookId = b.bookId order by borrowreturnid";
                     res = stat.executeQuery(data);
                     while(res.next()){
                 %>
@@ -282,12 +283,11 @@
 							</span>
                     </td>
                     <td style="color:black"><%=res.getString("bookTitle")%></td>
-
                     <td style="color:black"><%=res.getString("numberBorrow")%></td>
                     <td style="color:black"><%=res.getString("borrowDate")%></td>
                     <td style="color:black"><%=res.getString("returnDate")%></td>
                     <td class="text-center">
-                        <a href='updateReturn.jsp?u=<%=res.getString("borrowreturnid")%>' class="btn btn-danger" style="color:black" onclick="return confirm('Are you sure to return the book?')">Return</a>
+                        <a href='updateReturn.jsp?u=<%=res.getString("borrowreturnID")%>' class="btn btn-danger" style="color:black" onclick="return confirm('Are you sure to return the book?')">Return</a>
                     </td>
 
                 </tr>

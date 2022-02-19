@@ -51,8 +51,7 @@ public class LibrarianBorrowServlet extends HttpServlet
             if(row>0){
                 out.println("Record inserted");
                 out.println("<html><body> <br/><br/>");
-                out.println("<a href='viewBorrow.jsp'>View Borrow List</a>");
-                out.println("</body></html>");
+                out.println("<a href='ViewBorrow.jsp'>View Borrow List</a>");
             }else{
                 out.println("Record failed");
             }
