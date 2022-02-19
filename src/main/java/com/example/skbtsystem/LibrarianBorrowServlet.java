@@ -24,7 +24,8 @@ public class LibrarianBorrowServlet extends HttpServlet
             Integer numberBorrow = Integer.valueOf(request.getParameter("numberBorrow"));
             String borrowDate = request.getParameter("borrowDate");
             String returnDate = request.getParameter ("returnDate");
-            String bookId = request.getParameter ("bookId");
+            String returnLateDate = request.getParameter("returnlatedate");
+            Integer bookId = Integer.valueOf(request.getParameter ("bookId"));
 
             Class.forName("org.postgresql.Driver");
             String dbURL = "jdbc:postgresql://ec2-3-212-143-188.compute-1.amazonaws.com:5432/d9pq1r2tte9jfs";
@@ -37,11 +38,14 @@ public class LibrarianBorrowServlet extends HttpServlet
                     " values( default ,?,?,?,?,?,?)";
             st = conn.prepareStatement(query);
 
-            st.setInt(1,userID);
-            st.setInt(2,numberBorrow);
-            st.setString(3,borrowDate);
-            st.setString(4,returnDate);
-            st.setString(5,bookId);
+            st.setInt(1,numberBorrow);
+            st.setString(2,borrowDate);
+            st.setString(3,returnDate);
+            st.setString(4,returnLateDate);
+            st.setInt(5,userID);
+            st.setInt(6,bookId);
+
+
             int row= st.executeUpdate();
 
             if(row>0){
