@@ -52,7 +52,7 @@
 
       <tr>
         <th class="text-center" style="color:black">Borrow Return ID</th>
-        <th class="text-center" style="color:black">Book ID</th>
+        <th class="text-center" style="color:black">Name</th>
         <th class="text-center" style="color:black">Book Title</th>
         <th class="text-center" style="color:black">Number Of Borrow</th>
         <th class="text-center" style="color:black">Borrow Date</th>
@@ -75,13 +75,13 @@
         Class.forName(DB_DRIVER);
         conn = DriverManager.getConnection(DB_HOST, DB_USER, DB_PASSWORD);
         stat = conn.createStatement();
-        String data = "select * from borrowreturninfo br join book b on br.bookId = b.bookId order by borrowreturnID";
+        String data = "select * from borrowreturninfo br join book b on br.bookId = b.bookId join library_user li on br.userid = li.userid";
         res = stat.executeQuery(data);
         while(res.next()){
       %>
       <tr>
         <td style="color:black"><%=res.getString("borrowreturnID")%></td>
-        <td style="color:black"><%=res.getString("bookID")%></td>
+        <td style="color:black"><%=res.getString("username")%></td>
         <td style="color:black"><%=res.getString("bookTitle")%></td>
         <td style="color:black"><%=res.getString("numberBorrow")%></td>
         <td style="color:black"><%=res.getString("borrowDate")%></td>
