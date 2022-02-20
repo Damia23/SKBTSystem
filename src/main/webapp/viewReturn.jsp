@@ -80,7 +80,7 @@
         while(res.next()){
       %>
       <tr>
-        <td style="color:black"><%=res.getString("borrowreturnID")%></td>
+        <td style="color:black"><%=res.getString("borrowreturnid")%></td>
         <td style="color:black"><%=res.getString("username")%></td>
         <td style="color:black"><%=res.getString("bookTitle")%></td>
         <td style="color:black"><%=res.getString("numberBorrow")%></td>
@@ -89,7 +89,7 @@
         <td style="color:black"><%=res.getString("returnLateDate")%></td>
 
         <td class="text-center">
-          <a href='updateFine.jsp?u=<%=res.getString("borrowReturnID")%>' class="btn btn-success" onclick="return confirm('Are you sure to manage fine ')">Fine</a>
+          <a href='updateFine.jsp?u=<%=res.getString("borrowreturnid")%>' class="btn btn-success" onclick="return confirm('Are you sure to manage fine ')">Fine</a>
           <a href='DeleteBorrow.jsp?d=<%=res.getString("borrowreturnid")%>' class="btn btn-danger" onclick="return confirm('Are you sure to delete return record ')">Delete</a>
         </td>
       </tr>

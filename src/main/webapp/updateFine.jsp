@@ -46,41 +46,41 @@
             <%
                 stat = conn.createStatement();
                 String u = request.getParameter("u");
-                String data = "select * from borrowreturninfo br join book b on br.bookID = b.bookID join library_user us on br.userID = us.userID where borrowReturnID='"+ u +"'";
+                String data = "select * from borrowreturninfo br join book b on br.bookid = b.bookid join library_user us on br.userid = us.userid where borrowreturnid='"+ u +"'";
                 res = stat.executeQuery(data);
                 while(res.next()){
             %>
-            <input type="hidden" name="borrowReturnID" value='<%=res.getString("borrowReturnID") %>'/>
+            <input type="hidden" name="borrowReturnID" value='<%=res.getString("borrowreturnid") %>'/>
 
 
             <div class="form-group">
                 <label>User ID</label>
-                <input id="userID" type="text" class="form-control" name="userID" readonly value='<%=res.getString("userID") %>'/>
+                <input id="userID" type="text" class="form-control" name="userID" readonly value='<%=res.getString("userid") %>'/>
             </div>
 
             <div class="form-group">
                 <label>User Name</label>
-                <input id="userName" type="text" class="form-control" name="userName" readonly value='<%=res.getString("userName") %>'/>
+                <input id="userName" type="text" class="form-control" name="userName" readonly value='<%=res.getString("username") %>'/>
             </div>
 
             <div class="form-group">
                 <label>Book ID</label>
-                <input id="bookID" type="text" class="form-control" name="bookID" readonly value='<%=res.getString("bookID") %>'/>
+                <input id="bookID" type="text" class="form-control" name="bookID" readonly value='<%=res.getString("bookid") %>'/>
             </div>
 
             <div class="form-group">
                 <label>Book Title</label>
-                <input id="bookTitle" type="text" class="form-control" name="bookTitle" readonly value='<%=res.getString("bookTitle") %>'/>
+                <input id="bookTitle" type="text" class="form-control" name="bookTitle" readonly value='<%=res.getString("booktitle") %>'/>
             </div>
 
             <div class="form-group">
                 <label>Date Should Return</label>
-                <input id="returnDate" type="date" class="form-control" name="returnDate" readonly value='<%=res.getString("returnDate") %>'/>
+                <input id="returnDate" type="date" class="form-control" name="returnDate" readonly value='<%=res.getString("returndate") %>'/>
             </div>
 
             <div class="form-group">
                 <label>Return Date</label>
-                <input id="returnLateDate" type="date" class="form-control" name="returnLateDate" value='<%=res.getString("returnLateDate") %>'/>
+                <input id="returnLateDate" type="date" class="form-control" name="returnLateDate" value='<%=res.getString("returnlatedate") %>'/>
             </div>
 
             <div class="form-group">
@@ -99,14 +99,14 @@
         </form>
 
             <%
-    Integer a = Integer.valueOf(request.getParameter("fineAmount"));
-    Integer b = Integer.valueOf(request.getParameter("borrowReturnID"));
-    Integer c = Integer.valueOf(request.getParameter("userID"));
-    Integer d = Integer.valueOf(request.getParameter("bookID"));
+    Integer a = Integer.valueOf(request.getParameter("fineamount"));
+    Integer b = Integer.valueOf(request.getParameter("borrowreturnid"));
+    Integer c = Integer.valueOf(request.getParameter("userid"));
+    Integer d = Integer.valueOf(request.getParameter("bookid"));
 
 
 
-        String query = "insert into fine( fineID,fineAmount,borrowReturnID,userID,bookID) values (default ,?,?,?,?)";
+        String query = "insert into fine( fineid,fineamount,borrowreturnid,userid,bookid) values (default ,?,?,?,?)";
         stmt = conn.prepareStatement(query);
         stmt.setInt(1, a);
         stmt.setInt(2, b);
