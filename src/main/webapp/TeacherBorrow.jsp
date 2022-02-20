@@ -223,5 +223,37 @@
         session.setAttribute("bookId",request.getParameter("bookId"));
     }
 %>
+
+<h2>SKBT BOOK LIST</h2>
+
+<table id="list"  >
+    <tr>
+        <th>Book ID</th>
+        <th>Book Title</th>
+
+    </tr>
+    <%
+        String DB_DRIVER = "org.postgresql.Driver";
+        String DB_HOST = "jdbc:postgresql://ec2-3-212-143-188.compute-1.amazonaws.com:5432/d9pq1r2tte9jfs";
+        String DB_USER = "wzhkegxdhdsbgm";
+        String DB_PASSWORD = "2de0ec5650e40e6383f4ad61c98e44dec650a6a8f9d79fdf03efa59408d53f99";
+        Connection conn ;
+        Statement stat ;
+        ResultSet res ;
+        Class.forName(DB_DRIVER);
+        conn = DriverManager.getConnection(DB_HOST, DB_USER, DB_PASSWORD);
+        stat = conn.createStatement();
+        String data =  "select * from book";
+        res = stat.executeQuery(data);
+        while(res.next()){
+    %>
+    <tr>
+        <td><%=res.getInt("bookID")%></td>
+        <td><%=res.getString("bookTitle")%></td>
+
+    </tr>
+    <% } %>
+</table>
+<br>
 </body>
 </html>
