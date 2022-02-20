@@ -99,7 +99,7 @@
         </form>
 
             <%
-    String a = request.getParameter("fineAmount");
+    String a = request.getParameter("fineamount");
     String b = request.getParameter("userid");
     String c = request.getParameter("borrowreturnid");
     String d = request.getParameter("bookid");
