@@ -12,7 +12,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Book Directories</title>
+    <title>Book List</title>
 
 
 <body style="background-color:whitesmoke">
