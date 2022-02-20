@@ -50,42 +50,42 @@
                 res = stat.executeQuery(data);
                 while(res.next()){
             %>
-            <input type="hidden" name="borrowReturnID" value='<%=res.getString("borrowreturnid") %>'/>
+            <input type="hidden" name="borrowreturnid" value='<%=res.getString("borrowreturnid") %>'/>
 
 
             <div class="form-group">
                 <label>User ID</label>
-                <input id="userID" type="text" class="form-control" name="userID" readonly value='<%=res.getString("userid") %>'/>
+                <input id="userid" type="text" class="form-control" name="userid" readonly value='<%=res.getString("userid") %>'/>
             </div>
 
             <div class="form-group">
                 <label>User Name</label>
-                <input id="userName" type="text" class="form-control" name="userName" readonly value='<%=res.getString("username") %>'/>
+                <input id="username" type="text" class="form-control" name="username" readonly value='<%=res.getString("username") %>'/>
             </div>
 
             <div class="form-group">
                 <label>Book ID</label>
-                <input id="bookID" type="text" class="form-control" name="bookID" readonly value='<%=res.getString("bookid") %>'/>
+                <input id="bookid" type="text" class="form-control" name="bookid" readonly value='<%=res.getString("bookid") %>'/>
             </div>
 
             <div class="form-group">
                 <label>Book Title</label>
-                <input id="bookTitle" type="text" class="form-control" name="bookTitle" readonly value='<%=res.getString("booktitle") %>'/>
+                <input id="booktitle" type="text" class="form-control" name="booktitle" readonly value='<%=res.getString("booktitle") %>'/>
             </div>
 
             <div class="form-group">
                 <label>Date Should Return</label>
-                <input id="returnDate" type="date" class="form-control" name="returnDate" readonly value='<%=res.getString("returndate") %>'/>
+                <input id="returndate" type="date" class="form-control" name="returndate" readonly value='<%=res.getString("returndate") %>'/>
             </div>
 
             <div class="form-group">
                 <label>Return Date</label>
-                <input id="returnLateDate" type="date" class="form-control" name="returnLateDate" value='<%=res.getString("returnlatedate") %>'/>
+                <input id="returnlatedate" type="date" class="form-control" name="returnlatedate" value='<%=res.getString("returnlatedate") %>'/>
             </div>
 
             <div class="form-group">
                 <label>Fine Amount</label>
-                <input id="fineAmount" class="form-control" name="fineAmount" type="text" required>
+                <input id="fineamount" class="form-control" name="fineamount" type="text" required>
             </div>
 
 
@@ -99,26 +99,27 @@
         </form>
 
             <%
-    Integer a = Integer.parseInt(request.getParameter("fineamount"));
-    Integer b = Integer.parseInt(request.getParameter("userid"));
-    Integer c = Integer.parseInt(request.getParameter("borrowreturnid"));
-    Integer d = Integer.parseInt(request.getParameter("bookid"));
+        Integer a = Integer.parseInt(request.getParameter("fineamount"));
+        Integer b = Integer.parseInt(request.getParameter("userid"));
+        Integer c = Integer.parseInt(request.getParameter("borrowreturnid"));
+        Integer d = Integer.parseInt(request.getParameter("bookid"));
 
 
- if (a != null && b != null && c != null && d != null  ) {
-        String query = "insert into fine( fineid, fineamount, userid, borrowreturnid, bookid) values (nextval('fine_fineid_seq') ,?,?,?,?)";
-        stmt = conn.prepareStatement(query);
-        stmt.setInt(1, a);
-        stmt.setInt(2, b);
-        stmt.setInt(3, c);
-        stmt.setInt(4, d);
+     if (a != null && b != null && c != null && d != null  )
+     {
+            String query = "insert into fine( fineid, fineamount, userid, borrowreturnid, bookid) values (nextval('fine_fineid_seq') ,?,?,?,?)";
+            stmt = conn.prepareStatement(query);
+            stmt.setInt(1, a);
+            stmt.setInt(2, b);
+            stmt.setInt(3, c);
+            stmt.setInt(4, d);
 
 
 
-        stmt.executeUpdate();
+            stmt.executeUpdate();
 
-        response.sendRedirect("ManageFine.jsp");
-}
+            response.sendRedirect("ManageFine.jsp");
+    }
 
 %>
 
