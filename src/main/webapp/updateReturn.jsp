@@ -89,7 +89,7 @@
 </html>
 <%
     String a = request.getParameter("borrowreturnID");
-    Integer b = Integer.parseInt(request.getParameter("bookId"));
+    int b = Integer.parseInt(request.getParameter("bookId"));
     String c = request.getParameter("numberBorrow");
     String d = request.getParameter("borrowDate");
     String e = request.getParameter("returnDate");
