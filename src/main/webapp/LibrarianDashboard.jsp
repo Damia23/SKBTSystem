@@ -79,12 +79,74 @@
         transition: .2s ease-in;
         cursor: pointer;
     }
+
+
+
     button:hover{
         background: #6d44b8;
     }
 
+    header ul
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header ul li
+    {
+        list-style: none;
+        margin-left: 20px;
+        font-size: 25px
+    }
+
+    header ul li a
+    {
+        text-decoration: none;
+        padding: 6px 15px;
+        color: #fff;
+        border-radius: 20px;
+    }
+
+    header ul li a:hover
+    {
+        background: #fff;
+        color: #2b1055;
+    }
+
+    header
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 80%;
+        padding: 30px 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 10000;
+    }
+
+    header .logo
+    {
+        color: #fff;
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 2em;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
 </style>
 <body>
+
+<header>
+    <a href="#" class="logo">SKBT</a>
+    <ul>
+        <li><a href="LibrarianLogout.jsp">Logout</a></li>
+    </ul>
+</header>
+
 <div class="main">
     <label>Hello, <%=session.getAttribute("useremail")%>!</label>
     <label2>You have the authority to manage the library operations</label2>
@@ -94,7 +156,7 @@
     <a href="LibrarianBorrow.jsp"><button>Borrow Book</button></a>
     <a href="viewUser.jsp"><button>Library User Lists</button></a>
     <a href="ManageFine.jsp"><button>Fine</button></a>
-    <a href='LibrarianLogout.jsp'><button>Log out</button></a>
 </div>
 </body>
 </html>
+

@@ -92,7 +92,7 @@
     String e = request.getParameter("returnLateDate");
 
 
-    if (a != null && b != null && c != null && d != null && e != null )
+    if (!(a == null && b == null && c == null && d == null && e == null))
     {
         String query = "update borrowreturninfo set numberBorrow=?,borrowDate=?, returnDate=?, returnLateDate=? where borrowreturnID='" + a + "'";
         stmt = conn.prepareStatement(query);
