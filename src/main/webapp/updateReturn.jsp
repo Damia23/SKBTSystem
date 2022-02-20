@@ -89,16 +89,17 @@
 </html>
 <%
     String a = request.getParameter("borrowreturnID");
-    String b = request.getParameter("bookId");
+    Integer b = Integer.parseInt(request.getParameter("bookId"));
     String c = request.getParameter("numberBorrow");
     String d = request.getParameter("borrowDate");
     String e = request.getParameter("returnDate");
     String f = request.getParameter("returnLateDate");
 
-    if (a != null && b != null && c != null && d != null && e != null && f != null) {
+    if (a != null && b != null && c != null && d != null && e != null && f != null)
+    {
         String query = "update borrowreturninfo set bookId=?,numberBorrow=?,borrowDate=?, returnDate=?, returnLateDate=? where borrowreturnID='" + a + "'";
         stmt = conn.prepareStatement(query);
-        stmt.setString(1, b);
+        stmt.setInt(1, b);
         stmt.setString(2, c);
         stmt.setString(3, d);
         stmt.setString(4, e);
