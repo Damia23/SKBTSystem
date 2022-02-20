@@ -152,7 +152,7 @@
     <br>
     <label>Hello, <%=session.getAttribute("useremail")%>!</label>
     <label2>You can borrow and return book at your fingertips!</label2>
-    <a href="ViewBookStudentTeacher.jsp"><button>View Book</button></a>
+    <a href="ViewBookStudentTeacher2.jsp"><button>View Book</button></a>
     <a href="StudentBorrow.jsp"><button>Borrow Book</button></a>
 </div>
 </body>

@@ -4,8 +4,8 @@
 <%@ page import="java.sql.DriverManager" %><%--
   Created by IntelliJ IDEA.
   User: User
-  Date: 19/2/2022
-  Time: 3:44 PM
+  Date: 20/2/2022
+  Time: 8:21 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -26,7 +26,7 @@
 <header>
     <nav class="navbar navbar-expand-md navbar-dark" style="background-color: mediumpurple">
         <div style="text-align: center;">
-            <a href="TeacherDashboard.jsp" class="navbar-brand" style="color:black">Home</a>
+            <a href="StudentDashboard.jsp" class="navbar-brand" style="color:black">Home</a>
         </div>
     </nav>
 </header>
@@ -90,5 +90,3 @@
 </div>
 </body>
 </html>
-
-
