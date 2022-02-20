@@ -9,7 +9,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%ResultSet resultset =null;%>
 
 <html>
@@ -70,6 +69,8 @@
         h1 {
             font-size: 32px;
         }
+
+
         .main-block, .info {
             display: flex;
             flex-direction: column;
@@ -110,6 +111,10 @@
         .metod {
             display: flex;
         }
+        table, th, td {
+            border:1px solid black;
+        }
+
         .button1 {
             display: block;
             width: 200px;
@@ -156,13 +161,50 @@
                 width: 48%;
             }
         }
+
+        #list {
+            font-family: Arial, Helvetica, sans-serif;
+            border: 2px solid black;
+            border-collapse: collapse;
+            width: 45%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+
+        }
+
+        #list td, #list th {
+            border: 1px solid #ddd;
+            padding: 8px;
+            position: center;
+        }
+
+        #list tr:nth-child(even){background-color: #f2f2f2;}
+
+        #list tr:hover {background-color: #ddd;}
+
+        #list th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #04AA6D;
+            color: white;
+            position: center;
+            text-align: center;
+
+        }
+
+        h2{
+            text-align: center;
+            color: white;
+        }
     </style>
 
 </head>
 <body>
 <div class="main-block">
     <h1>Borrow Book Form</h1><br>
-    <form action="StudentBorrowServlet" method="post">
+    <form action="TeacherBorrowServlet" method="post">
 
         <%
             try {
@@ -224,5 +266,37 @@
         session.setAttribute("bookId",request.getParameter("bookId"));
     }
 %>
+
+<h2>SKBT BOOK LIST</h2>
+
+<table id="list"  >
+    <tr>
+        <th>Book ID</th>
+        <th>Book Title</th>
+
+    </tr>
+    <%
+        String DB_DRIVER = "org.postgresql.Driver";
+        String DB_HOST = "jdbc:postgresql://ec2-3-212-143-188.compute-1.amazonaws.com:5432/d9pq1r2tte9jfs";
+        String DB_USER = "wzhkegxdhdsbgm";
+        String DB_PASSWORD = "2de0ec5650e40e6383f4ad61c98e44dec650a6a8f9d79fdf03efa59408d53f99";
+        Connection conn ;
+        Statement stat ;
+        ResultSet res ;
+        Class.forName(DB_DRIVER);
+        conn = DriverManager.getConnection(DB_HOST, DB_USER, DB_PASSWORD);
+        stat = conn.createStatement();
+        String data =  "select * from book";
+        res = stat.executeQuery(data);
+        while(res.next()){
+    %>
+    <tr>
+        <td><%=res.getInt("bookID")%></td>
+        <td><%=res.getString("bookTitle")%></td>
+
+    </tr>
+    <% } %>
+</table>
+<br>
 </body>
 </html>
