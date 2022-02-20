@@ -99,13 +99,13 @@
         </form>
 
             <%
-    int a = Integer.parseInt(request.getParameter("fineamount"));
-    int b = Integer.parseInt(request.getParameter("userid"));
-    int c = Integer.parseInt(request.getParameter("borrowreturnid"));
-    int d = Integer.parseInt(request.getParameter("bookid"));
+    Integer a = Integer.parseInt(request.getParameter("fineamount"));
+    Integer b = Integer.parseInt(request.getParameter("userid"));
+    Integer c = Integer.parseInt(request.getParameter("borrowreturnid"));
+    Integer d = Integer.parseInt(request.getParameter("bookid"));
 
 
-
+ if (a != null && b != null && c != null && d != null  ) {
         String query = "insert into fine( fineid, fineamount, userid, borrowreturnid, bookid) values (nextval('fine_fineid_seq') ,?,?,?,?)";
         stmt = conn.prepareStatement(query);
         stmt.setInt(1, a);
@@ -118,7 +118,7 @@
         stmt.executeUpdate();
 
         response.sendRedirect("ManageFine.jsp");
-
+}
 
 %>
 

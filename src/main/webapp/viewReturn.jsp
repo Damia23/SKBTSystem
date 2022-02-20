@@ -82,11 +82,11 @@
       <tr>
         <td style="color:black"><%=res.getString("borrowreturnid")%></td>
         <td style="color:black"><%=res.getString("username")%></td>
-        <td style="color:black"><%=res.getString("bookTitle")%></td>
-        <td style="color:black"><%=res.getString("numberBorrow")%></td>
-        <td style="color:black"><%=res.getString("borrowDate")%></td>
-        <td style="color:black"><%=res.getString("returnDate")%></td>
-        <td style="color:black"><%=res.getString("returnLateDate")%></td>
+        <td style="color:black"><%=res.getString("booktitle")%></td>
+        <td style="color:black"><%=res.getString("numberborrow")%></td>
+        <td style="color:black"><%=res.getString("borrowdate")%></td>
+        <td style="color:black"><%=res.getString("returndate")%></td>
+        <td style="color:black"><%=res.getString("returnlatedate")%></td>
 
         <td class="text-center">
           <a href='updateFine.jsp?u=<%=res.getString("borrowreturnid")%>' class="btn btn-success" onclick="return confirm('Are you sure to manage fine ')">Fine</a>
