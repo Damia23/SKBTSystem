@@ -177,7 +177,7 @@
 %>
 
 <div class="main">
-    <label>Hello, Teacher (<%=session.getAttribute("useremail")%>!)</label>
+    <label>Hello, Teacher (<%=session.getAttribute("useremail")%>)!</label>
     <h1> Here's Your Details:</h1>
     <h2>Name : <%=res.getString("username")%></h2>
     <h2>Your ID : <%=res.getString("userid")%></h2>
