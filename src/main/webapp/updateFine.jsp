@@ -100,13 +100,13 @@
 
             <%
     Integer a = Integer.valueOf(request.getParameter("fineamount"));
-    Integer b = Integer.valueOf(request.getParameter("borrowreturnid"));
-    Integer c = Integer.valueOf(request.getParameter("userid"));
+    Integer b = Integer.valueOf(request.getParameter("userid"));
+    Integer c = Integer.valueOf(request.getParameter("borrowreturnid"));
     Integer d = Integer.valueOf(request.getParameter("bookid"));
 
 
 
-        String query = "insert into fine( fineid,fineamount,borrowreturnid,userid,bookid) values (default ,?,?,?,?)";
+        String query = "insert into fine( fineid, fineamount, userid, borrowreturnid, bookid) values (nextval('fine_fineid_seq') ,?,?,?,?)";
         stmt = conn.prepareStatement(query);
         stmt.setInt(1, a);
         stmt.setInt(2, b);
