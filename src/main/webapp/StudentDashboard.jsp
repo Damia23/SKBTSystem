@@ -1,4 +1,7 @@
-<%--
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.Statement" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.sql.DriverManager" %><%--
   Created by IntelliJ IDEA.
   User: User
   Date: 25/1/2022
@@ -59,6 +62,17 @@
         display: flex;
         margin: 50px;
         font-weight: bold;
+    }
+
+    h1{
+        text-align: center;
+        color: white;
+    }
+
+    h2{
+        text-align: center;
+        color: mediumpurple;
+        font-size: 1.3em;
     }
 
     button{
@@ -146,12 +160,31 @@
     </ul>
 </header>
 
+<%
+    String DB_DRIVER = "org.postgresql.Driver";
+    String DB_HOST = "jdbc:postgresql://ec2-3-212-143-188.compute-1.amazonaws.com:5432/d9pq1r2tte9jfs";
+    String DB_USER = "wzhkegxdhdsbgm";
+    String DB_PASSWORD = "2de0ec5650e40e6383f4ad61c98e44dec650a6a8f9d79fdf03efa59408d53f99";
+    Connection conn ;
+    Statement stat ;
+    ResultSet res ;
+    Class.forName(DB_DRIVER);
+    conn = DriverManager.getConnection(DB_HOST, DB_USER, DB_PASSWORD);
+    stat = conn.createStatement();
+    String data = "select * from library_user where useremail =  '"+session.getAttribute("useremail")+"'";
+    res = stat.executeQuery(data);
+    while(res.next()){
+%>
+
 <div class="main">
-    <br>
-    <br>
-    <br>
-    <label>Hello, <%=session.getAttribute("useremail")%>!</label>
-    <label2>You can borrow and return book at your fingertips!</label2>
+    <label>Hello, Student (<%=session.getAttribute("useremail")%>!)</label>
+    <h1> Here's Your Details:</h1>
+    <h2>Name : <%=res.getString("username")%></h2>
+    <h2>Your ID : <%=res.getString("userid")%></h2>
+        <%
+        }
+    %>
+    <label2>You can view and borrow books at your fingertips!</label2>
     <a href="ViewBookStudentTeacher2.jsp"><button>Book List</button></a>
     <a href="StudentBorrow.jsp"><button>Borrow Book Form</button></a>
 </div>
