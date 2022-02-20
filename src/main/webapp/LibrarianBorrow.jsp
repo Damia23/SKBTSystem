@@ -13,12 +13,14 @@
 
 <html>
 <head>
-    <title> BULOH INC BORROW BOOK FORM </title>
+    <title> Borrow Book Form </title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <style>
         body
         {
@@ -130,7 +132,7 @@
         }
         .button2 {
             display: block;
-            width: 200px;
+            width: 180px;
             padding: 10px;
             margin: 20px auto 0;
             border: none;
@@ -187,7 +189,7 @@
             padding-top: 12px;
             padding-bottom: 12px;
             text-align: left;
-            background-color: #04AA6D;
+            background-color: mediumpurple;
             color: white;
             position: center;
             text-align: center;
@@ -202,9 +204,18 @@
 
 </head>
 <body>
+
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark" style="background-color: mediumpurple">
+        <div style="text-align: center;">
+            <a href="LibrarianDashboard.jsp" class="navbar-brand" style="color:black">Home</a>
+        </div>
+    </nav>
+</header>
+
 <div class="main-block">
     <h1>Borrow Book Form</h1><br>
-    <form action="TeacherBorrowServlet" method="post">
+    <form action="LibrarianBorrowServlet" method="post">
 
         <%
             try {
@@ -242,7 +253,7 @@
 
         </div>
         <button type="submit" class="button1">Borrow</button>
-        <a href='LibrarianDashboard.jsp'><button2>Cancel</button2></a>
+        <a href='LibrarianDashboard.jsp' class="button2"><button2>Cancel</button2></a>
 
         <% } finally {
 
@@ -300,5 +311,4 @@
 <br>
 </body>
 </html>
-
 
