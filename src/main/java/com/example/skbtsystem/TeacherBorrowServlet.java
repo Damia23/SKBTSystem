@@ -50,7 +50,7 @@ public class TeacherBorrowServlet extends HttpServlet {
             if(row>0){
                 out.println("<script type=\"text/javascript\">");
                 out.println("alert('Borrow Success');");
-                out.println("location='TeacherBorrow.jsp';");
+                out.println("location='TeacherDashboard.jsp';");
                 out.println("</script>");
                 //response.sendRedirect("TeacherBorrow.jsp");
             }else{

@@ -47,8 +47,10 @@ public class StudentBorrowServlet extends HttpServlet {
             int row= st.executeUpdate();
 
             if(row>0){
-                out.println("Record inserted");
-                out.println("<html><body> <br/><br/>");
+                out.println("<script type=\"text/javascript\">");
+                out.println("alert('Borrow Success');");
+                out.println("location='StudentDashboard.jsp';");
+                out.println("</script>");
             }else{
                 out.println("Record failed");
             }
