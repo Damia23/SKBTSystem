@@ -69,6 +69,8 @@
         h1 {
             font-size: 32px;
         }
+
+
         .main-block, .info {
             display: flex;
             flex-direction: column;
@@ -109,6 +111,10 @@
         .metod {
             display: flex;
         }
+        table, th, td {
+            border:1px solid black;
+        }
+
         .button1 {
             display: block;
             width: 200px;
@@ -154,6 +160,43 @@
             select {
                 width: 48%;
             }
+        }
+
+        #list {
+            font-family: Arial, Helvetica, sans-serif;
+            border: 2px solid black;
+            border-collapse: collapse;
+            width: 45%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+
+        }
+
+        #list td, #list th {
+            border: 1px solid #ddd;
+            padding: 8px;
+            position: center;
+        }
+
+        #list tr:nth-child(even){background-color: #f2f2f2;}
+
+        #list tr:hover {background-color: #ddd;}
+
+        #list th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #04AA6D;
+            color: white;
+            position: center;
+            text-align: center;
+
+        }
+
+        h2{
+            text-align: center;
+            color: white;
         }
     </style>
 
