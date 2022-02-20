@@ -17,7 +17,7 @@
   Class.forName(DB_DRIVER);
   Connection conn = DriverManager.getConnection(DB_HOST,DB_USER,DB_PASSWORD);
   Statement stat = conn.createStatement();
-  stat.executeUpdate("delete from borrowreturninfo where borrowid = '"+ id +"'");
+  stat.executeUpdate("delete from borrowreturninfo where borrowreturnid = '"+ id +"'");
   response.sendRedirect("ViewBorrow.jsp");
 %>
-
+Class.forName("org.postgresql.Driver");
