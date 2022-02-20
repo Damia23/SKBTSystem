@@ -242,7 +242,7 @@
 
         </div>
         <button type="submit" class="button1">Borrow</button>
-        <button href="index.jsp" class="button2">Cancel</button>
+        <button href="TeacherDashboard.jsp" class="button2">Cancel</button>
 
         <% } finally {
 
