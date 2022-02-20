@@ -1,4 +1,7 @@
-<%--
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.sql.Statement" %>
+<%@ page import="java.sql.DriverManager" %><%--
   Created by IntelliJ IDEA.
   User: User
   Date: 9/1/2022
@@ -60,6 +63,11 @@
         display: flex;
         margin: 50px;
         font-weight: bold;
+    }
+
+    h1{
+        text-align: center;
+        color: powderblue;
     }
 
     button{
@@ -147,8 +155,28 @@
     </ul>
 </header>
 
+<%
+    String DB_DRIVER = "org.postgresql.Driver";
+    String DB_HOST = "jdbc:postgresql://ec2-3-212-143-188.compute-1.amazonaws.com:5432/d9pq1r2tte9jfs";
+    String DB_USER = "wzhkegxdhdsbgm";
+    String DB_PASSWORD = "2de0ec5650e40e6383f4ad61c98e44dec650a6a8f9d79fdf03efa59408d53f99";
+    Connection conn ;
+    Statement stat ;
+    ResultSet res ;
+    Class.forName(DB_DRIVER);
+    conn = DriverManager.getConnection(DB_HOST, DB_USER, DB_PASSWORD);
+    stat = conn.createStatement();
+    String data = "select * from library_user where useremail =  '"+session.getAttribute("useremail")+"'";
+    res = stat.executeQuery(data);
+    while(res.next()){
+%>
+
 <div class="main">
-    <label>Hello, <%=session.getAttribute("useremail")%>!</label>
+    <label>Hello, Admin (<%=session.getAttribute("useremail")%>!)</label>
+    <h1> Here's Your Details -> Name : <%=res.getString("username")%> & Your ID : <%=res.getString("userid")%></h1>
+    <%
+        }
+    %>
     <label2>You have the authority to manage the library operations</label2>
     <a href="ViewBook.jsp"><button>Book List</button></a>
     <a href="LibrarianBorrow.jsp"><button>Borrow Book Form</button></a>
