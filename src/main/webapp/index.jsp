@@ -9,10 +9,6 @@
 
 <header>
     <a href="#" class="logo">SKBT</a>
-    <ul>
-        <li><a href="#">Login</a></li>
-        <li><a href="#">Contact</a></li>
-    </ul>
 </header>
 
 <section>
