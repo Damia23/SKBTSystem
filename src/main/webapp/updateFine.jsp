@@ -107,7 +107,7 @@
 
 
     if (a != null && b != null && c != null && d != null  ) {
-        String query = "insert into fine( fineid,fineamount,userid, borrowreturnid, bookid) values (default ,?,?,?,?)";
+        String query = "insert into fine( fineid,fineamount,userid, borrowreturnid, bookid) values (nextval('fine_fineid_seq') ,?,?,?,?)";
         stmt = conn.prepareStatement(query);
         stmt.setString(1, a);
         stmt.setString(2, b);
