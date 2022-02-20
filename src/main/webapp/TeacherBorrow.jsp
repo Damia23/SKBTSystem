@@ -189,7 +189,7 @@
             padding-top: 12px;
             padding-bottom: 12px;
             text-align: left;
-            background-color: #04AA6D;
+            background-color: mediumpurple;
             color: white;
             position: center;
             text-align: center;
