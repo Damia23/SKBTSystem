@@ -250,6 +250,7 @@
 								<label for="selectAll"></label>
 							</span>
                     </th>
+                    <th class="text-center" style="color:black">Name</th>
                     <th class="text-center" style="color:black">Book Title</th>
                     <th class="text-center" style="color:black">Number of Books Borrowed</th>
                     <th class="text-center" style="color:black">Borrow Date</th>
