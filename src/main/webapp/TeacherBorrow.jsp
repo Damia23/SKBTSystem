@@ -13,7 +13,7 @@
 
 <html>
 <head>
-    <title> BULOH INC BORROW BOOK FORM </title>
+    <title> Borrow Book Form </title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -130,7 +130,7 @@
         }
         .button2 {
             display: block;
-            width: 200px;
+            width: 180px;
             padding: 10px;
             margin: 20px auto 0;
             border: none;
@@ -187,7 +187,7 @@
             padding-top: 12px;
             padding-bottom: 12px;
             text-align: left;
-            background-color: #04AA6D;
+            background-color: mediumpurple;
             color: white;
             position: center;
             text-align: center;
@@ -242,7 +242,7 @@
 
         </div>
         <button type="submit" class="button1">Borrow</button>
-        <a href='TeacherDashboard.jsp'><button2>Cancel</button2></a>
+        <a href='TeacherDashboard.jsp' class="button2"><button2>Cancel</button2></a>
 
         <% } finally {
 
