@@ -52,10 +52,7 @@
                 while(res.next()){
             %>
             <input type="hidden" name="borrowreturnID" value='<%=res.getString("borrowreturnID") %>'/>
-            <div class="form-group">
-                <label>Book ID</label>
-                <input type="text" class="form-control" name="bookId" value='<%=res.getString("bookId") %>'/>
-            </div>
+
 
             <div class="form-group">
                 <label>Number of Borrow</label>
@@ -89,21 +86,21 @@
 </html>
 <%
     String a = request.getParameter("borrowreturnID");
-    int b = Integer.parseInt(request.getParameter("bookId"));
-    String c = request.getParameter("numberBorrow");
-    String d = request.getParameter("borrowDate");
-    String e = request.getParameter("returnDate");
-    String f = request.getParameter("returnLateDate");
+    String b = request.getParameter("numberBorrow");
+    String c = request.getParameter("borrowDate");
+    String d = request.getParameter("returnDate");
+    String e = request.getParameter("returnLateDate");
 
-    if (a != null && b != null && c != null && d != null && e != null && f != null)
+
+    if (a != null && b != null && c != null && d != null && e != null )
     {
-        String query = "update borrowreturninfo set bookId=?,numberBorrow=?,borrowDate=?, returnDate=?, returnLateDate=? where borrowreturnID='" + a + "'";
+        String query = "update borrowreturninfo set numberBorrow=?,borrowDate=?, returnDate=?, returnLateDate=? where borrowreturnID='" + a + "'";
         stmt = conn.prepareStatement(query);
-        stmt.setInt(1, b);
+        stmt.setString(1, b);
         stmt.setString(2, c);
         stmt.setString(3, d);
         stmt.setString(4, e);
-        stmt.setString(5, f);
+
 
 
         stmt.executeUpdate();
