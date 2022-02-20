@@ -112,8 +112,7 @@
 <body>
 
 <section class="get-in-touch">
-    <h1 class="title">SKBT Library Book Directories</h1>
-    <h3 class="title2">ADD NEW BOOK DETAILS FORM</h3>
+    <h1 class="title">Add New Book Details Form</h1>
     <form method="post" action="AddbookServlet" class="contact-form row">
 
         <div class="form-field col-lg-6">

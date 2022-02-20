@@ -12,7 +12,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Book Directories</title>
+    <title>Book List</title>
 
 
 <body style="background-color:whitesmoke">
@@ -26,7 +26,7 @@
 <header>
     <nav class="navbar navbar-expand-md navbar-dark" style="background-color: mediumpurple">
         <div style="text-align: center;">
-            <a href="LibrarianDashboard.jsp" class="navbar-brand" style="color:black"> SKBT Library Directories </a>
+            <a href="LibrarianDashboard.jsp" class="navbar-brand" style="color:black">Home</a>
         </div>
     </nav>
 </header>
