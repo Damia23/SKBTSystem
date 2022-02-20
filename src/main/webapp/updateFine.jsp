@@ -99,19 +99,19 @@
         </form>
 
             <%
-    String a = request.getParameter("fineamount");
-    String b = request.getParameter("userid");
-    String c = request.getParameter("borrowreturnid");
-    String d = request.getParameter("bookid");
+    int a = Integer.parseInt(request.getParameter("fineamount"));
+    int b = Integer.parseInt(request.getParameter("userid"));
+    int c = Integer.parseInt(request.getParameter("borrowreturnid"));
+    int d = Integer.parseInt(request.getParameter("bookid"));
 
 
 
         String query = "insert into fine( fineid, fineamount, userid, borrowreturnid, bookid) values (nextval('fine_fineid_seq') ,?,?,?,?)";
         stmt = conn.prepareStatement(query);
-        stmt.setString(1, a);
-        stmt.setString(2, b);
-        stmt.setString(3, c);
-        stmt.setString(4, d);
+        stmt.setInt(1, a);
+        stmt.setInt(2, b);
+        stmt.setInt(3, c);
+        stmt.setInt(4, d);
 
 
 
