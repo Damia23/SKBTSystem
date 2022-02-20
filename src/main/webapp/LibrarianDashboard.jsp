@@ -39,7 +39,7 @@
     }
     .main{
         width: 95%;
-        height: 600px;
+        height: 700px;
         background: red;
         overflow: hidden;
         background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
@@ -67,7 +67,13 @@
 
     h1{
         text-align: center;
-        color: powderblue;
+        color: white;
+    }
+
+    h2{
+        text-align: center;
+        color: mediumpurple;
+        font-size: 1.3em;
     }
 
     button{
@@ -87,7 +93,6 @@
         transition: .2s ease-in;
         cursor: pointer;
     }
-
 
 
     button:hover{
@@ -173,7 +178,9 @@
 
 <div class="main">
     <label>Hello, Admin (<%=session.getAttribute("useremail")%>!)</label>
-    <h1> Here's Your Details -> Name : <%=res.getString("username")%> & Your ID : <%=res.getString("userid")%></h1>
+    <h1> Here's Your Details:</h1>
+    <h2>Name : <%=res.getString("username")%></h2>
+    <h2>Your ID : <%=res.getString("userid")%></h2>
     <%
         }
     %>
