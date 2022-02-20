@@ -270,8 +270,7 @@
                     conn = DriverManager.getConnection(DB_HOST, DB_USER, DB_PASSWORD);
                     stat = conn.createStatement();
                     String data =  "select * from borrowreturninfo br join book b on br.bookId = b.bookId " +
-                            "join library_user li on br.userid = li.userid" +
-                            "order by borrowreturnid";
+                            "join library_user li on br.userid = li.userid";
                     res = stat.executeQuery(data);
                     while(res.next()){
                 %>
