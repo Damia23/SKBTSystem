@@ -99,20 +99,20 @@
         </form>
 
             <%
-    String a = request.getParameter("fineAmount");
-    String b = request.getParameter("borrowReturnID");
-    String c = request.getParameter("userID");
-    String d = request.getParameter("bookID");
+    Integer a = Integer.valueOf(request.getParameter("fineAmount"));
+    Integer b = Integer.valueOf(request.getParameter("borrowReturnID"));
+    Integer c = Integer.valueOf(request.getParameter("userID"));
+    Integer d = Integer.valueOf(request.getParameter("bookID"));
 
 
 
     if (a != null && b != null && c != null && d != null  ) {
         String query = "insert into fine( fineID,fineAmount,borrowReturnID,userID,bookID) values (default ,?,?,?,?)";
         stmt = conn.prepareStatement(query);
-        stmt.setString(1, a);
-        stmt.setString(2, b);
-        stmt.setString(3, c);
-        stmt.setString(4, d);
+        stmt.setInt(1, a);
+        stmt.setInt(2, b);
+        stmt.setInt(3, c);
+        stmt.setInt(4, d);
 
 
 
