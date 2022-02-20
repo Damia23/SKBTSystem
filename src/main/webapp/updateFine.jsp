@@ -106,7 +106,6 @@
 
 
 
-    if (a != null && b != null && c != null && d != null  ) {
         String query = "insert into fine( fineID,fineAmount,borrowReturnID,userID,bookID) values (default ,?,?,?,?)";
         stmt = conn.prepareStatement(query);
         stmt.setInt(1, a);
@@ -119,7 +118,6 @@
         stmt.executeUpdate();
 
         response.sendRedirect("ManageFine.jsp");
-    }
 
 
 %>
