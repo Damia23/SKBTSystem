@@ -48,8 +48,11 @@ public class TeacherBorrowServlet extends HttpServlet {
             int row= st.executeUpdate();
 
             if(row>0){
-                out.println("Record inserted");
-                out.println("<html><body> <br/><br/>");
+                out.println("<script type=\"text/javascript\">");
+                out.println("alert('Borrow Success');");
+                out.println("location='TeacherBorrow.jsp';");
+                out.println("</script>");
+                //response.sendRedirect("TeacherBorrow.jsp");
             }else{
                 out.println("Record failed");
             }
