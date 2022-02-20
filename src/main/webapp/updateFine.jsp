@@ -99,27 +99,28 @@
         </form>
 
             <%
-        Integer a = Integer.parseInt(request.getParameter("fineamount"));
-        Integer b = Integer.parseInt(request.getParameter("userid"));
-        Integer c = Integer.parseInt(request.getParameter("borrowreturnid"));
-        Integer d = Integer.parseInt(request.getParameter("bookid"));
-
-
-     if (a != null && b != null && c != null && d != null  )
-     {
-            String query = "insert into fine( fineid, fineamount, userid, borrowreturnid, bookid) values (nextval('fine_fineid_seq') ,?,?,?,?)";
-            stmt = conn.prepareStatement(query);
-            stmt.setInt(1, a);
-            stmt.setInt(2, b);
-            stmt.setInt(3, c);
-            stmt.setInt(4, d);
+    String a = request.getParameter("fineAmount");
+    String b = request.getParameter("userid");
+    String c = request.getParameter("borrowreturnid");
+    String d = request.getParameter("bookid");
 
 
 
-            stmt.executeUpdate();
+    if (a != null && b != null && c != null && d != null  ) {
+        String query = "insert into fine( fineid,fineamount,userid, borrowreturnid, bookid) values (default ,?,?,?,?)";
+        stmt = conn.prepareStatement(query);
+        stmt.setString(1, a);
+        stmt.setString(2, b);
+        stmt.setString(3, c);
+        stmt.setString(4, d);
 
-            response.sendRedirect("ManageFine.jsp");
+
+
+        stmt.executeUpdate();
+
+        response.sendRedirect("ManageFine.jsp");
     }
+
 
 %>
 
