@@ -270,6 +270,7 @@
                     conn = DriverManager.getConnection(DB_HOST, DB_USER, DB_PASSWORD);
                     stat = conn.createStatement();
                     String data =  "select * from borrowreturninfo br join book b on br.bookId = b.bookId " +
+                            "join library_user li on br.userid = li.userid" +
                             "order by borrowreturnid";
                     res = stat.executeQuery(data);
                     while(res.next()){
@@ -283,6 +284,7 @@
 								<label for="checkbox1"></label>
 							</span>
                     </td>
+                    <td style="color:black"><%=res.getString("username")%></td>
                     <td style="color:black"><%=res.getString("bookTitle")%></td>
                     <td style="color:black"><%=res.getString("numberBorrow")%></td>
                     <td style="color:black"><%=res.getString("borrowDate")%></td>

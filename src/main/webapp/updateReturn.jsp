@@ -17,7 +17,7 @@
 <header>
     <nav class="navbar navbar-expand-md navbar-dark" style="background-color: plum">
         <div>
-            <a href="index.jsp" class="navbar-brand" style="color:black"> Update Return </a>
+            <a href="LibrarianDashboard.jsp" class="navbar-brand" style="color:black">Home</a>
         </div>
     </nav>
 </header>
@@ -53,7 +53,6 @@
             %>
             <input type="hidden" name="borrowreturnID" value='<%=res.getString("borrowreturnID") %>'/>
 
-
             <div class="form-group">
                 <label>Number of Borrow</label>
                 <input type="text" class="form-control" name="numberBorrow" value='<%=res.getString("numberBorrow") %>'/>
@@ -76,7 +75,7 @@
 
 
             <button type="submit" class="btn btn-warning" onclick="return confirm('Are you sure to update return record')">Update</button>
-            <a href="viewBorrow.jsp" class="btn btn-default">Back</a>
+            <a href="ViewBorrow.jsp" class="btn btn-default">Back</a>
             <%
                 }
             %>
