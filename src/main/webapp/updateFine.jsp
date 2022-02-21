@@ -100,16 +100,15 @@
 
             <%
 
-            int a = 0;
-            if (request.getParameter("fineamount")!=null)
+            int a= 0, b=0, c=0, d=0;
+            if (request.getParameter("fineamount")!=null || request.getParameter("userid")!=null || request.getParameter("borrowreturnid")!=null || request.getParameter("bookid")!=null)
             {
                 a = Integer.parseInt(request.getParameter("fineamount"));
+                b = Integer.parseInt(request.getParameter("userid"));
+                c = Integer.parseInt(request.getParameter("borrowreturnid"));
+                d = Integer.parseInt(request.getParameter("bookid"));
             }
 
-
-    int b = Integer.parseInt(request.getParameter("userid"));
-    int c = Integer.parseInt(request.getParameter("borrowreturnid"));
-    int d = Integer.parseInt(request.getParameter("bookid"));
 
 
     if (a != 0 && b != 0 && c != 0 && d != 0  )
