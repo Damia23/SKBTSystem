@@ -35,7 +35,7 @@ public class LibrarianBorrowServlet extends HttpServlet
 
             PreparedStatement st;
             String query="insert into borrowreturninfo( borrowreturnID,borrowDate,returnDate,returnlatedate, userid, bookId)" +
-                    " values( default ,?,?,?,?,?,?)";
+                    " values( default ,?,?,?,?,?)";
             st = conn.prepareStatement(query);
 
             st.setString(1,borrowDate);
