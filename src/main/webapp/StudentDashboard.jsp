@@ -156,6 +156,7 @@
 <header>
     <a href="#" class="logo">SKBT</a>
     <ul>
+        <li><a href="StudentHistory.jsp">History</a></li>
         <li><a href="StudentLogout.jsp">Logout</a></li>
     </ul>
 </header>
