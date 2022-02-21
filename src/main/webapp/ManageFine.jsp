@@ -290,12 +290,7 @@
             <table class="table table-striped table-hover">
                 <thead>
                 <tr>
-                    <th>
-							<span class="custom-checkbox">
-								<input type="checkbox" id="selectAll">
-								<label for="selectAll"></label>
-							</span>
-                    </th>
+
                     <th>Fine ID</th>
                     <th>User ID</th>
                     <th>User Name</th>
@@ -322,10 +317,6 @@
                         ResultSet res = stat.executeQuery(data);
                         while(res.next()){
                     %>
-                    <td> <span class="custom-checkbox">
-								<input type="checkbox" id="selectAll">
-								<label for="selectAll"></label>
-                     </span></td>
                     <td style="color:black"><%=res.getInt("fineID")%></td>
                     <td style="color:black"><%=res.getInt("userID")%></td>
                     <td style="color:black"><%=res.getString("userName")%></td>

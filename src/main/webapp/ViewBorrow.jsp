@@ -244,12 +244,6 @@
             <table class="table table-striped table-hover">
                 <thead>
                 <tr>
-                    <th>
-							<span class="custom-checkbox">
-								<input type="checkbox" id="selectAll">
-								<label for="selectAll"></label>
-							</span>
-                    </th>
                     <th class="text-center" style="color:black">Name</th>
                     <th class="text-center" style="color:black">Book Title</th>
                     <th class="text-center" style="color:black">Number of Books Borrowed</th>
@@ -278,12 +272,6 @@
 
 
                 <tr>
-                    <td>
-							<span class="custom-checkbox">
-								<input type="checkbox" id="checkbox1" name="options[]" value="1">
-								<label for="checkbox1"></label>
-							</span>
-                    </td>
                     <td style="color:black"><%=res.getString("username")%></td>
                     <td style="color:black"><%=res.getString("bookTitle")%></td>
                     <td style="color:black"><%=res.getString("numberBorrow")%></td>
