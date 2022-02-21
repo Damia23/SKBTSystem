@@ -189,6 +189,7 @@
     <a href="LibrarianBorrow.jsp"><button>Borrow Book Form</button></a>
     <a href="ViewBorrow.jsp"><button>Borrow List</button></a>
     <a href="viewReturn.jsp"><button>Return List</button></a>
+    <a href="ManageFine.jsp"><button>Fine</button></a>
     <a href="viewUser.jsp"><button>User List</button></a>
 
 </div>
