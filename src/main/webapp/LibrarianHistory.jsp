@@ -233,24 +233,6 @@
     <div class="table-responsive">
         <div class="table-wrapper">
             <div class="table-title">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <h2>Borrow History</h2>
-                    </div>
-                    <div class="col-sm-6">
-
-                    </div>
-                </div>
-            </div>
-            <table class="table table-striped table-hover">
-                <thead>
-                <tr>
-                    <th class="text-center" style="color:black">Book Title</th>
-                    <th class="text-center" style="color:black">Borrow Date</th>
-                    <th class="text-center" style="color:black">Return Date</th>
-                </tr>
-                </thead>
-                <tbody>
                 <%
                     String DB_DRIVER = "org.postgresql.Driver";
                     String DB_HOST = "jdbc:postgresql://ec2-3-212-143-188.compute-1.amazonaws.com:5432/d9pq1r2tte9jfs";
@@ -267,6 +249,25 @@
                     res = stat.executeQuery(data);
                     while(res.next()){
                 %>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h2>Borrow History for <%=res.getString("username")%></h2>
+                    </div>
+                    <div class="col-sm-6">
+
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <th class="text-center" style="color:black">Book Title</th>
+                    <th class="text-center" style="color:black">Borrow Date</th>
+                    <th class="text-center" style="color:black">Return Date</th>
+                </tr>
+                </thead>
+                <tbody>
+
                 <tr>
                     <td style="color:black"><%=res.getString("booktitle")%></td>
                     <td style="color:black"><%=res.getString("borrowDate")%></td>
