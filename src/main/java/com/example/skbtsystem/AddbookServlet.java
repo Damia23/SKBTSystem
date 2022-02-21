@@ -41,7 +41,7 @@ public class AddbookServlet extends HttpServlet {
             String bookauthor = request.getParameter("bookAuthor");
             int bookamount = Integer.parseInt(request.getParameter("bookAmount"));
             String bookpublisher = request.getParameter("bookPublisher");
-            int bookavailability = Integer.parseInt(request.getParameter("bookavailability"));
+            //int bookavailability = Integer.parseInt(request.getParameter("bookavailability"));
 
             Class.forName("org.postgresql.Driver");
             String url = "jdbc:postgresql://ec2-3-212-143-188.compute-1.amazonaws.com:5432/d9pq1r2tte9jfs";
@@ -58,7 +58,7 @@ public class AddbookServlet extends HttpServlet {
             st.setString(3,bookauthor);
             st.setString(4,bookpublisher);
             st.setInt(5,bookamount);
-            st.setInt(6,bookavailability);
+            st.setInt(6,bookamount);
             int row= st.executeUpdate();//return no of row effected
 
             if(row>0){
