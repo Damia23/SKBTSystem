@@ -21,7 +21,7 @@ public class LibrarianBorrowServlet extends HttpServlet
 
         try{
             Integer userID = Integer.valueOf(request.getParameter("userID"));
-            Integer numberBorrow = Integer.valueOf(request.getParameter("numberBorrow"));
+            //Integer numberBorrow = Integer.valueOf(request.getParameter("numberBorrow"));
             String borrowDate = request.getParameter("borrowDate");
             String returnDate = request.getParameter ("returnDate");
             String returnLateDate = request.getParameter("returnlatedate");
@@ -34,16 +34,15 @@ public class LibrarianBorrowServlet extends HttpServlet
             Connection conn = DriverManager.getConnection(dbURL, user, pass);
 
             PreparedStatement st;
-            String query="insert into borrowreturninfo( borrowreturnID,numberBorrow,borrowDate,returnDate,returnlatedate, userid, bookId)" +
+            String query="insert into borrowreturninfo( borrowreturnID,borrowDate,returnDate,returnlatedate, userid, bookId)" +
                     " values( default ,?,?,?,?,?,?)";
             st = conn.prepareStatement(query);
 
-            st.setInt(1,numberBorrow);
-            st.setString(2,borrowDate);
-            st.setString(3,returnDate);
-            st.setString(4,returnLateDate);
-            st.setInt(5,userID);
-            st.setInt(6,bookId);
+            st.setString(1,borrowDate);
+            st.setString(2,returnDate);
+            st.setString(3,returnLateDate);
+            st.setInt(4,userID);
+            st.setInt(5,bookId);
 
 
             int row= st.executeUpdate();
