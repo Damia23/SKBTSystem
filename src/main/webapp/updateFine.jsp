@@ -99,7 +99,14 @@
         </form>
 
             <%
-    int a = Integer.parseInt(request.getParameter("fineamount"));
+
+            int a = 0;
+            if (request.getParameter("fineamount")==null)
+            {
+                a = Integer.parseInt(request.getParameter("fineamount"));
+            }
+
+
     int b = Integer.parseInt(request.getParameter("userid"));
     int c = Integer.parseInt(request.getParameter("borrowreturnid"));
     int d = Integer.parseInt(request.getParameter("bookid"));
