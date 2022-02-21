@@ -234,8 +234,6 @@
 
         <div>User ID<br>
             <input type="text" name="userID">
-            <br>Number of Books Borrow<br>
-            <input type="text" name="numberBorrow">
         </div>
         <div>Date of Borrow Book<br>
 
@@ -271,7 +269,6 @@
     else{
 
         session.setAttribute("userID",request.getParameter("userID"));
-        session.setAttribute("numberBorrow",request.getParameter("numberBorrow"));
         session.setAttribute("borrowDate",request.getParameter("borrowDate"));
         session.setAttribute("returnDate",request.getParameter("returnDate"));
         session.setAttribute("bookId",request.getParameter("bookId"));
