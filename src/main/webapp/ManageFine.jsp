@@ -317,6 +317,7 @@
                         ResultSet res = stat.executeQuery(data);
                         while(res.next()){
                     %>
+                    <tr>
                     <td style="color:black"><%=res.getInt("fineID")%></td>
                     <td style="color:black"><%=res.getInt("userID")%></td>
                     <td style="color:black"><%=res.getString("userName")%></td>
@@ -326,6 +327,7 @@
                     <td>
                         <a href='fineProcess.jsp?d=<%=res.getString("fineID")%>' class="btn btn-success">Paid</a>
                     </td>
+                </tr>
                     <%
                         }
                     %>
