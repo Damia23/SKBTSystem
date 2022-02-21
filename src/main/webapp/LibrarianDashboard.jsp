@@ -157,6 +157,7 @@
     <a href="#" class="logo">SKBT</a>
     <ul>
         <li><a href="LibrarianLogout.jsp">Logout</a></li>
+        <li><a href="LibrarianHistory.jsp">History</a></li>
     </ul>
 </header>
 

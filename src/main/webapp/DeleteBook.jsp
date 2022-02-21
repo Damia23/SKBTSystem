@@ -22,6 +22,7 @@
     Connection conn = DriverManager.getConnection(DB_HOST,DB_USER,DB_PASSWORD);
     Statement stat = conn.createStatement();
     stat.executeUpdate("delete from book where bookId = '"+ id +"'");
-    response.sendRedirect("ViewBook.jsp");
+    if(("bookid")
+            response.sendRedirect("ViewBook.jsp");
 %>
 
