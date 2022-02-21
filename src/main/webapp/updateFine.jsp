@@ -101,7 +101,7 @@
             <%
 
             int a = 0;
-            if (request.getParameter("fineamount")==null)
+            if (request.getParameter("fineamount")!=null)
             {
                 a = Integer.parseInt(request.getParameter("fineamount"));
             }
