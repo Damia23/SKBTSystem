@@ -246,7 +246,6 @@
                 <tr>
                     <th class="text-center" style="color:black">Name</th>
                     <th class="text-center" style="color:black">Book Title</th>
-                    <th class="text-center" style="color:black">Number of Books Borrowed</th>
                     <th class="text-center" style="color:black">Borrow Date</th>
                     <th class="text-center" style="color:black">Date Must Return</th>
                     <th class="text-center" style="color:black">Action</th>
@@ -274,7 +273,6 @@
                 <tr>
                     <td style="color:black"><%=res.getString("username")%></td>
                     <td style="color:black"><%=res.getString("bookTitle")%></td>
-                    <td style="color:black"><%=res.getString("numberBorrow")%></td>
                     <td style="color:black"><%=res.getString("borrowDate")%></td>
                     <td style="color:black"><%=res.getString("returnDate")%></td>
                     <td class="text-center">
