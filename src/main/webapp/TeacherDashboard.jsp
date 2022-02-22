@@ -156,7 +156,6 @@
 <header>
     <a href="#" class="logo">SKBT</a>
     <ul>
-        <li><a href="TeacherHistory.jsp">History</a></li>
         <li><a href="TeacherLogout.jsp">Logout</a></li>
     </ul>
 </header>
@@ -187,6 +186,7 @@
     %>
     <label2>You can view and borrow books at your fingertips!</label2>
     <a href="ViewBookStudentTeacher.jsp"><button>Book List</button></a>
+    <a href="TeacherHistory.jsp"><button>Borrow History</button></a>
 </div>
 </body>
 </html>

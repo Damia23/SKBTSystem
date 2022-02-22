@@ -76,7 +76,7 @@
                 if (row > 0) {
                     pout.println("<script type=\"text/javascript\">");
                     pout.println("alert('Borrow Success!');");
-                    pout.println("location='ViewBookStudentTeacher.jsp';");
+                    pout.println("location='TeacherHistory.jsp';");
                     pout.println("</script>");
 
                 } else {
