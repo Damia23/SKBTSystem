@@ -244,7 +244,7 @@
             <select id="bookId" name="bookId">
 
                 <% while (resultset.next()) { %>
-                <option> <%= resultset.getString("bookID")%> </option>
+                <option value='<%= resultset.getString("bookid")%>'><%= resultset.getString("booktitle")%></option>
                 <% } %>
 
             </select>
