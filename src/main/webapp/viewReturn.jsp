@@ -54,7 +54,6 @@
         <th class="text-center" style="color:black">Borrow Return ID</th>
         <th class="text-center" style="color:black">Name</th>
         <th class="text-center" style="color:black">Book Title</th>
-        <th class="text-center" style="color:black">Number Of Borrow</th>
         <th class="text-center" style="color:black">Borrow Date</th>
         <th class="text-center" style="color:black">Date Should Return</th>
         <th class="text-center" style="color:black">Date Returned</th>
@@ -83,7 +82,6 @@
         <td style="color:black"><%=res.getString("borrowreturnid")%></td>
         <td style="color:black"><%=res.getString("username")%></td>
         <td style="color:black"><%=res.getString("booktitle")%></td>
-        <td style="color:black"><%=res.getString("numberborrow")%></td>
         <td style="color:black"><%=res.getString("borrowdate")%></td>
         <td style="color:black"><%=res.getString("returndate")%></td>
         <td style="color:black"><%=res.getString("returnlatedate")%></td>
