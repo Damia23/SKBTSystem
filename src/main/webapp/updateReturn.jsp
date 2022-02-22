@@ -10,7 +10,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     PrintWriter pout = response.getWriter();
-    String id = request.getParameter("r");
+    String id = request.getParameter("u");
 
     Calendar c1 = Calendar.getInstance();// borrowDate
     c1.getTime();
@@ -23,8 +23,8 @@
     java.sql.PreparedStatement sta;
     String bestie = "update borrowreturninfo set returnlatedate=? where borrowreturnid = '"+id+"'";
     sta = connection.prepareStatement(bestie);
-    String returndate = String.valueOf(c1.getTime());
-    sta.setString(1, returndate);
+    //String return = String.valueOf(c1.getTime();
+    sta.setString(1, String.valueOf(c1.getTime()));
     sta.executeUpdate();
     pout.println("<script type=\"text/javascript\">");
     pout.println("alert('Return Success!');");
