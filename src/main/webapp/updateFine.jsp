@@ -83,14 +83,6 @@
                 <input id="returnlatedate" type="text" class="form-control" name="returnlatedate" value='<%=res.getString("returnlatedate") %>'/>
             </div>
 
-            <div class="form-group">
-                <label>Fine Amount</label>
-                <input id="fineamount" class="form-control" name="fineamount" type="text" required>
-            </div>
-
-
-
-
             <button type="submit" class="button1">Submit</button>
             <a href="ViewBorrow.jsp" class="btn btn-default">Back</a>
             <%
@@ -98,38 +90,9 @@
             %>
         </form>
 
-            <%
-
-            int a= 0, b=0, c=0, d=0;
-            if (request.getParameter("fineamount")!=null || request.getParameter("userid")!=null || request.getParameter("borrowreturnid")!=null
-            || request.getParameter("bookid")!=null)
-            {
-                a = Integer.parseInt(request.getParameter("fineamount"));
-                b = Integer.parseInt(request.getParameter("userid"));
-                c = Integer.parseInt(request.getParameter("borrowreturnid"));
-                d = Integer.parseInt(request.getParameter("bookid"));
-            }
 
 
 
-    if (a != 0 && b != 0 && c != 0 && d != 0  )
-    {
-        String query = "insert into fine( fineid,fineamount,userid, borrowreturnid, bookid) values (nextval('fine_fineid_seq') ,?,?,?,?)";
-        stmt = conn.prepareStatement(query);
-        stmt.setInt(1, a);
-        stmt.setInt(2, b);
-        stmt.setInt(3, c);
-        stmt.setInt(4, d);
-
-
-
-        stmt.executeUpdate();
-
-        response.sendRedirect("ManageFine.jsp");
-    }
-
-
-%>
 
 
 </body>
