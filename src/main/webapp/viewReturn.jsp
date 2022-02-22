@@ -94,7 +94,7 @@
           <%
             }
           %>
-          <a href='updateFine.jsp?u=<%=res.getString("borrowreturnid")%>' class="btn btn-success" onclick="return confirm('Are you sure to manage fine ')">Fine</a>n record ')">Delete</a>
+          <a href='updateFine.jsp?u=<%=res.getString("borrowreturnid")%>' class="btn btn-success" onclick="return confirm('Are you sure to manage fine ')">Fine</a>
         </td>
       </tr>
 
