@@ -248,6 +248,7 @@
                     <th class="text-center" style="color:black">Book Title</th>
                     <th class="text-center" style="color:black">Borrow Date</th>
                     <th class="text-center" style="color:black">Date Must Return</th>
+                    <th class="text-center" style="color:black">Date Returned</th>
                     <th class="text-center" style="color:black">Action</th>
                 </tr>
                 </thead>
@@ -275,6 +276,7 @@
                     <td style="color:black"><%=res.getString("bookTitle")%></td>
                     <td style="color:black"><%=res.getString("borrowDate")%></td>
                     <td style="color:black"><%=res.getString("returnDate")%></td>
+                    <td style="color:black"><%=res.getString("returnlatedate")%></td>
                     <td class="text-center">
                         <a href='updateReturn.jsp?u=<%=res.getString("borrowreturnID")%>' class="btn btn-danger" style="color:black" onclick="return confirm('Are you sure to return the book?')">Return</a>
                     </td>
