@@ -60,7 +60,7 @@
 
                 java.sql.PreparedStatement st;
                 String query = "insert into borrowreturninfo(borrowreturnid,borrowdate,returndate,userid,bookid,returnlatedate)" +
-                        " values(borrowreturnid_seq.nextval,?,?,?,?,?)";
+                        " values(nextval('borrowreturninfo_borrowid_seq'),?,?,?,?,?)";
                 st = connection.prepareStatement(query);
 
                 st.setString(1, String.valueOf(c1.getTime()));
