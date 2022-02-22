@@ -157,7 +157,6 @@
     <a href="#" class="logo">SKBT</a>
     <ul>
         <li><a href="LibrarianLogout.jsp">Logout</a></li>
-        <li><a href="LibrarianHistory.jsp">History</a></li>
     </ul>
 </header>
 
@@ -191,6 +190,7 @@
     <a href="viewReturn.jsp"><button>Return List</button></a>
     <a href="ManageFine.jsp"><button>Fine</button></a>
     <a href="viewUser.jsp"><button>User List</button></a>
+    <a href="LibrarianHistory.jsp"><button>Borrow History</button></a>
 
 </div>
 </body>
