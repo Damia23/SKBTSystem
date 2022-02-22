@@ -107,9 +107,9 @@
     //String d = request.getParameter("bookauthor");
     //String e = request.getParameter("bookpublisher");
 
-    if( Integer.parseInt(request.getParameter("bookId"))!=0 || request.getParameter("bookTitle")!=null || request.getParameter("bookPubYear")!=null
-    || request.getParameter("bookAuthor")!=null || request.getParameter("bookPublisher")!=null || Integer.parseInt(request.getParameter("bookAmount"))!= 0
-    || Integer.parseInt(request.getParameter("bookAvailability"))!= 0)
+    if( request.getParameter("bookId")!=null || request.getParameter("bookTitle")!=null || request.getParameter("bookPubYear")!=null
+    || request.getParameter("bookAuthor")!=null || request.getParameter("bookPublisher")!=null ||request.getParameter("bookAmount")!= null
+    || request.getParameter("bookAvailability")!= null)
     {
         a = Integer.parseInt(request.getParameter("bookId"));
         b = request.getParameter("bookTitle");
