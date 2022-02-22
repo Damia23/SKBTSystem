@@ -75,12 +75,12 @@
 
             <div class="form-group">
                 <label>Date Should Return</label>
-                <input id="returndate" type="date" class="form-control" name="returndate" readonly value='<%=res.getString("returndate") %>'/>
+                <input id="returndate" type="text" class="form-control" name="returndate" readonly value='<%=res.getString("returndate") %>'/>
             </div>
 
             <div class="form-group">
                 <label>Return Date</label>
-                <input id="returnlatedate" type="date" class="form-control" name="returnlatedate" value='<%=res.getString("returnlatedate") %>'/>
+                <input id="returnlatedate" type="text" class="form-control" name="returnlatedate" value='<%=res.getString("returnlatedate") %>'/>
             </div>
 
             <div class="form-group">
