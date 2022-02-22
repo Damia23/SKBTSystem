@@ -89,6 +89,41 @@
                 }
             %>
         </form>
+            <%
+    //String a = request.getParameter("fineAmount");
+    //String b = request.getParameter("borrowReturnID");
+    //String c = request.getParameter("userID");
+    //String d = request.getParameter("bookID");
+
+    int a=0, b=0, c=0, d=0;
+    if( request.getParameter("fineamount")!=null || request.getParameter("borrowreturnid")!=null || request.getParameter("userid")!=null
+    || request.getParameter("bookid")!=null )
+    {
+        a = Integer.parseInt(request.getParameter("fineamount"));
+        b = Integer.parseInt(request.getParameter("borrowreturnid"));
+        c = Integer.parseInt(request.getParameter("userid"));
+        d = Integer.parseInt(request.getParameter("bookid"));
+
+    }
+
+
+    if (a != 0 && b != 0 && c != 0 && d != 0  ) {
+        String query = "insert into fine( fineID,fineAmount,borrowReturnID,userID,bookID) values (default ,?,?,?,?)";
+        stmt = conn.prepareStatement(query);
+        stmt.setInt(1, a);
+        stmt.setInt(2, b);
+        stmt.setInt(3, c);
+        stmt.setInt(4, d);
+
+
+
+        stmt.executeUpdate();
+
+        response.sendRedirect("ManageFine.jsp");
+    }
+
+
+%>
 
 
 
