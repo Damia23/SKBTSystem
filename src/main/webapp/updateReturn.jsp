@@ -21,7 +21,7 @@
     String db_pass = "2de0ec5650e40e6383f4ad61c98e44dec650a6a8f9d79fdf03efa59408d53f99";
     Connection connection = DriverManager.getConnection(db_URL, db_user, db_pass);
     java.sql.PreparedStatement sta;
-    String bestie = "update borrow_returninfo set returnlatedate=? where borrowreturnid = '"+id+"'";
+    String bestie = "update borrowreturninfo set returnlatedate=? where borrowreturnid = '"+id+"'";
     sta = connection.prepareStatement(bestie);
     sta.setString(1, String.valueOf(c1.getTime()));
     sta.executeUpdate();
