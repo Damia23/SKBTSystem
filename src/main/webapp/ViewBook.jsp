@@ -54,6 +54,7 @@
                 <th class="text-center" style="color:black">Book Pub Year</th>
                 <th class="text-center" style="color:black">Book Author</th>
                 <th class="text-center" style="color:black">Book Amount</th>
+                <th class="text-center" style="color:black">Book Availability</th>
                 <th class="text-center" style="color:black">Book Publisher</th>
                 <th class="text-center" style="color:black">Action</th>
 
@@ -81,6 +82,7 @@
                 <td style="color:black"><%=res.getString("bookPubYear")%></td>
                 <td style="color:black"><%=res.getString("bookAuthor")%></td>
                 <td style="color:black"><%=res.getString("bookAmount")%></td>
+                <td style="color:black"><%=res.getString("bookAvailability")%></td>
                 <td style="color:black"><%=res.getString("bookPublisher")%></td>
                 <td class="text-center">
                     <a href='Updatebook.jsp?u=<%=res.getString("bookId")%>' class="btn btn-success">Update</a>
