@@ -37,8 +37,9 @@
     {
         String latedate = res.getString("returnlatedate");
         String actdate = res.getString("returndate");
-        Date date1= new SimpleDateFormat("dd/MM/yyyy").parse(latedate);
-        Date date2= new SimpleDateFormat("dd/MM/yyyy").parse(actdate);
+        Date date1= new SimpleDateFormat("E MMM dd HH:mm:ss z yyyy").parse(latedate);
+        Date date2= new SimpleDateFormat("E MMM dd HH:mm:ss z yyyy").parse(actdate);
+
 
         Class.forName("org.postgresql.Driver");
         String db_URL = "jdbc:postgresql://ec2-3-212-143-188.compute-1.amazonaws.com:5432/d9pq1r2tte9jfs";
