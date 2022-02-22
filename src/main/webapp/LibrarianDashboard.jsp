@@ -187,7 +187,6 @@
     %>
     <label2>You have the authority to manage the library operations</label2>
     <a href="ViewBook.jsp"><button>Book List</button></a>
-    <a href="LibrarianBorrow.jsp"><button>Borrow Book Form</button></a>
     <a href="ViewBorrow.jsp"><button>Borrow List</button></a>
     <a href="viewReturn.jsp"><button>Return List</button></a>
     <a href="ManageFine.jsp"><button>Fine</button></a>

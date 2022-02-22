@@ -187,7 +187,6 @@
     %>
     <label2>You can view and borrow books at your fingertips!</label2>
     <a href="ViewBookStudentTeacher2.jsp"><button>Book List</button></a>
-    <a href="StudentBorrow.jsp"><button>Borrow Book Form</button></a>
 </div>
 </body>
 </html>

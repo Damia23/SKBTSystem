@@ -76,6 +76,9 @@
                 <td style="color:black"><%=res.getString("bookAuthor")%></td>
                 <td style="color:black"><%=res.getString("bookAmount")%></td>
                 <td style="color:black"><%=res.getString("bookPublisher")%></td>
+                <td class="text-center">
+                    <a href='TeacherBorrowbook.jsp?g=<%=res.getString("bookId")%>' class="btn btn-info" onclick="return confirm('Are you sure to borrow this book?')">Borrow</a>
+                </td>
 
             </tr>
 

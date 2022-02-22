@@ -10,6 +10,10 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.io.IOException" %>
+<%@ page import="java.io.PrintWriter" %>
+
+
 <%
     String DB_DRIVER = "org.postgresql.Driver";
     String DB_HOST = "jdbc:postgresql://ec2-3-212-143-188.compute-1.amazonaws.com:5432/d9pq1r2tte9jfs";
@@ -28,6 +32,7 @@
         Integer userID = res.getInt("userid");
         Integer bookId = Integer.valueOf(request.getParameter ("g"));
         String returnlatedate = request.getParameter("returnLatedate");
+        PrintWriter pout = response.getWriter();
 
         String dbdriverr = "org.postgresql.Driver";
         String dbhostt = "jdbc:postgresql://ec2-3-212-143-188.compute-1.amazonaws.com:5432/d9pq1r2tte9jfs";
@@ -72,8 +77,11 @@
                 int row = st.executeUpdate();
 
                 if (row > 0) {
-                    // System.out.println("Borrow Success");
-                    response.sendRedirect("viewBorrow.jsp");
+                    pout.println("<script type=\"text/javascript\">");
+                    pout.println("alert('Borrow Success!');");
+                    pout.println("location='ViewBorrow.jsp';");
+                    pout.println("</script>");
+
                 } else {
 
                 }
@@ -89,7 +97,10 @@
                 sta.executeUpdate();
 
             }else{
-                response.sendRedirect("ViewBook.jsp");
+                pout.println("<script type=\"text/javascript\">");
+                pout.println("alert('Book Borrow Error! No book available!');");
+                pout.println("location='ViewBook.jsp';");
+                pout.println("</script>");
             }
         }
     }
