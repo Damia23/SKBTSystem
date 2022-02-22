@@ -73,6 +73,11 @@
             </div>
 
             <div class="form-group">
+                <label>Availability</label>
+                <input type="text" class="form-control" name="bookAvailability" value='<%=res.getString("bookavailability") %>'/>
+            </div>
+
+            <div class="form-group">
                 <label>Book Publisher</label>
                 <input type="text" class="form-control" name="bookPublisher" value='<%=res.getString("bookpublisher") %>'/>
             </div>
@@ -96,23 +101,23 @@
     //String f = request.getParameter("bookPublisher");
 
     int a=0, f=0, g=0;
-    String b= null,c=null,d=null,e=null;
+    String b=null,c=null,d=null,e=null;
     //String b = request.getParameter("booktitle");
     //String c = request.getParameter("bookpubyear");
     //String d = request.getParameter("bookauthor");
     //String e = request.getParameter("bookpublisher");
 
-    if( Integer.parseInt(request.getParameter("bookid"))!=0 || request.getParameter("booktitle")!=null || request.getParameter("bookpubyear")!=null
-    || request.getParameter("bookauthor")!=null || request.getParameter("bookpublisher")!=null || Integer.parseInt(request.getParameter("bookamount"))!= 0
-    || Integer.parseInt(request.getParameter("bookavailability"))!= 0)
+    if( Integer.parseInt(request.getParameter("bookId"))!=0 || request.getParameter("bookTitle")!=null || request.getParameter("bookPubYear")!=null
+    || request.getParameter("bookAuthor")!=null || request.getParameter("bookPublisher")!=null || Integer.parseInt(request.getParameter("bookAmount"))!= 0
+    || Integer.parseInt(request.getParameter("bookAvailability"))!= 0)
     {
-        a = Integer.parseInt(request.getParameter("bookid"));
-        b = request.getParameter("booktitle");
-        c = request.getParameter("bookpubyear");
-        d = request.getParameter("bookauthor");
-        e = request.getParameter("bookpublisher");
-        f = Integer.parseInt(request.getParameter("bookamount"));
-        g = Integer.parseInt(request.getParameter("bookavailability"));
+        a = Integer.parseInt(request.getParameter("bookId"));
+        b = request.getParameter("bookTitle");
+        c = request.getParameter("bookPubYear");
+        d = request.getParameter("bookAuthor");
+        e = request.getParameter("bookPublisher");
+        f = Integer.parseInt(request.getParameter("bookAmount"));
+        g = Integer.parseInt(request.getParameter("bookAvailability"));
 
     }
 
