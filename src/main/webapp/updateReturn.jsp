@@ -23,7 +23,8 @@
     java.sql.PreparedStatement sta;
     String bestie = "update borrowreturninfo set returnlatedate=? where borrowreturnid = '"+id+"'";
     sta = connection.prepareStatement(bestie);
-    sta.setString(1, String.valueOf(c1.getTime()));
+    String returndate = String.valueOf(c1.getTime());
+    sta.setString(1, returndate);
     sta.executeUpdate();
     pout.println("<script type=\"text/javascript\">");
     pout.println("alert('Return Success!');");
