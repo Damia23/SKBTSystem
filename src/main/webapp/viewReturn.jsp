@@ -87,8 +87,14 @@
         <td style="color:black"><%=res.getString("returnlatedate")%></td>
 
         <td class="text-center">
-          <a href='updateFine.jsp?u=<%=res.getString("borrowreturnid")%>' class="btn btn-success" onclick="return confirm('Are you sure to manage fine ')">Fine</a>
-          <a href='DeleteBorrow.jsp?d=<%=res.getString("borrowreturnid")%>' class="btn btn-danger" onclick="return confirm('Are you sure to delete return record ')">Delete</a>
+          <%
+            if(res.getString("returnlatedate")!=null){
+          %>
+          <a href='DeleteReturn.jsp?d=<%=res.getString("borrowreturnid")%>' class="btn btn-danger" onclick="return confirm('Are you sure to delete return record ')">Delete</a>
+          <%
+            }
+          %>
+          <a href='updateFine.jsp?u=<%=res.getString("borrowreturnid")%>' class="btn btn-success" onclick="return confirm('Are you sure to manage fine ')">Fine</a>n record ')">Delete</a>
         </td>
       </tr>
 
