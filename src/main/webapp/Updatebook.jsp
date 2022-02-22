@@ -96,10 +96,11 @@
     //String f = request.getParameter("bookPublisher");
 
     int a=0, f=0, g=0;
-    String b = request.getParameter("booktitle");
-    String c = request.getParameter("bookpubyear");
-    String d = request.getParameter("bookauthor");
-    String e = request.getParameter("bookpublisher");
+    String b= null,c=null,d=null,e=null;
+    //String b = request.getParameter("booktitle");
+    //String c = request.getParameter("bookpubyear");
+    //String d = request.getParameter("bookauthor");
+    //String e = request.getParameter("bookpublisher");
 
     if( Integer.parseInt(request.getParameter("bookid"))!=0 || request.getParameter("booktitle")!=null || request.getParameter("bookpubyear")!=null
     || request.getParameter("bookauthor")!=null || request.getParameter("bookpublisher")!=null || Integer.parseInt(request.getParameter("bookamount"))!= 0

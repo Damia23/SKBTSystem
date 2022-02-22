@@ -101,7 +101,8 @@
             <%
 
             int a= 0, b=0, c=0, d=0;
-            if (request.getParameter("fineamount")!=null || request.getParameter("userid")!=null || request.getParameter("borrowreturnid")!=null || request.getParameter("bookid")!=null)
+            if (request.getParameter("fineamount")!=null || request.getParameter("userid")!=null || request.getParameter("borrowreturnid")!=null
+            || request.getParameter("bookid")!=null)
             {
                 a = Integer.parseInt(request.getParameter("fineamount"));
                 b = Integer.parseInt(request.getParameter("userid"));
