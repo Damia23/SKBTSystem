@@ -88,21 +88,43 @@
 </body>
 </html>
 <%
-    String a = request.getParameter("bookId");
-    String b = request.getParameter("bookTitle");
-    String c = request.getParameter("bookPubYear");
-    String d = request.getParameter("bookAuthor");
-    String e = request.getParameter("bookAmount");
-    String f = request.getParameter("bookPublisher");
+    //String a = request.getParameter("bookId");
+    //String b = request.getParameter("bookTitle");
+    //String c = request.getParameter("bookPubYear");
+    //String d = request.getParameter("bookAuthor");
+    //String e = request.getParameter("bookAmount");
+    //String f = request.getParameter("bookPublisher");
 
-    if(a!=null && b!=null && c!=null && d!=null && e!=null && f!=null){
-        String query = "update book set booktitle=?,bookpubyear=?,bookauthor=?, bookamount=?, bookpublisher=? where bookid='"+a+"'";
+    int a=0, f=0, g=0;
+    String b = request.getParameter("booktitle");
+    String c = request.getParameter("bookpubyear");
+    String d = request.getParameter("bookauthor");
+    String e = request.getParameter("bookpublisher");
+
+    if( Integer.parseInt(request.getParameter("bookid"))!=0 || request.getParameter("booktitle")!=null || request.getParameter("bookpubyear")!=null
+    || request.getParameter("bookauthor")!=null || request.getParameter("bookpublisher")!=null || Integer.parseInt(request.getParameter("bookamount"))!= 0
+    || Integer.parseInt(request.getParameter("bookavailability"))!= 0)
+    {
+        a = Integer.parseInt(request.getParameter("bookid"));
+        b = request.getParameter("booktitle");
+        c = request.getParameter("bookpubyear");
+        d = request.getParameter("bookauthor");
+        e = request.getParameter("bookpublisher");
+        f = Integer.parseInt(request.getParameter("bookamount"));
+        g = Integer.parseInt(request.getParameter("bookavailability"));
+
+    }
+
+    if (a!=0 && b!=null && c!=null && d!=null && e!=null && f!=0 && g!=0)
+    {
+        String query = "update book set booktitle=?,bookpubyear=?,bookauthor=?, bookpublisher=?, bookamount=?, bookavailability=? where bookid='"+a+"'";
         stmt = conn.prepareStatement(query);
         stmt.setString(1,b);
         stmt.setString(2,c);
         stmt.setString(3,d);
         stmt.setString(4,e);
-        stmt.setString(5,f);
+        stmt.setInt(5,f);
+        stmt.setInt(6,g);
 
 
         stmt.executeUpdate();
