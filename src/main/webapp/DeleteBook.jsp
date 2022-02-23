@@ -5,11 +5,9 @@
   Time: 11:26 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@page import="java.sql.Statement"%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.Connection"%>
-<%@ page import="java.sql.*" %>
+<%@ page import="java.io.IOException" %>
 <%@ page import="java.io.PrintWriter" %>
+<%@ page import="java.sql.*" %>
 <%
     String id = request.getParameter("d");
 
