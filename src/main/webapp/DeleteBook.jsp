@@ -49,16 +49,16 @@
 
             }
 
-            if(row == 0){
+            if(row != 0){
                 pout.println("<script type=\"text/javascript\">");
-                pout.println("alert('Book CAN Deleted !');");
+                pout.println("alert('Book CANNOT Deleted !');");
                 pout.println("location='ViewBook.jsp';");
                 pout.println("</script>");
             }
 
             else{
                 pout.println("<script type=\"text/javascript\">");
-                pout.println("alert('Book CANNOT Deleted !');");
+                pout.println("alert('Book CAN Deleted !');");
                 pout.println("location='ViewBook.jsp';");
                 pout.println("</script>");
             }
