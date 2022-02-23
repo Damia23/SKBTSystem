@@ -52,14 +52,14 @@
             if(row == 0){
                 pout.println("<script type=\"text/javascript\">");
                 pout.println("alert('Book CANNOT Deleted !');");
-                pout.println("location='index.jsp';");
+                pout.println("location='ViewBorrow.jsp';");
                 pout.println("</script>");
             }
 
             else{
                 pout.println("<script type=\"text/javascript\">");
                 pout.println("alert('Book Deleted !');");
-                pout.println("location='index.jsp';");
+                pout.println("location='ViewBorrow.jsp';");
                 pout.println("</script>");
             }
 
