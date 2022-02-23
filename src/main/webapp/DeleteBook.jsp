@@ -14,10 +14,10 @@
     String id = request.getParameter("d");
 
 
-    String DB_DRIVER = "com.mysql.jdbc.Driver";
-    String DB_HOST = "jdbc:mysql://localhost:3306/skbtlib";
-    String DB_USER = "root";
-    String DB_PASSWORD = "";
+    String DB_DRIVER = "org.postgresql.Driver";
+    String DB_HOST = "jdbc:postgresql://ec2-3-212-143-188.compute-1.amazonaws.com:5432/d9pq1r2tte9jfs";
+    String DB_USER = "wzhkegxdhdsbgm";
+    String DB_PASSWORD = "2de0ec5650e40e6383f4ad61c98e44dec650a6a8f9d79fdf03efa59408d53f99";
     Connection conn ;
     Statement stat ;
     java.sql.ResultSet rest;
