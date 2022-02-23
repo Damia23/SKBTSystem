@@ -1,6 +1,3 @@
-<%@ page import="java.sql.Connection" %>
-<%@ page import="java.sql.DriverManager" %>
-<%@ page import="java.sql.Statement" %>
 <%--
   Created by IntelliJ IDEA.
   User: User
@@ -11,17 +8,69 @@
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
+<%@ page import="java.sql.*" %>
+<%@ page import="java.io.PrintWriter" %>
 <%
     String id = request.getParameter("d");
-    String DB_DRIVER = "org.postgresql.Driver";
-    String DB_HOST = "jdbc:postgresql://ec2-3-212-143-188.compute-1.amazonaws.com:5432/d9pq1r2tte9jfs";
-    String DB_USER = "wzhkegxdhdsbgm";
-    String DB_PASSWORD = "2de0ec5650e40e6383f4ad61c98e44dec650a6a8f9d79fdf03efa59408d53f99";
 
+
+    String DB_DRIVER = "com.mysql.jdbc.Driver";
+    String DB_HOST = "jdbc:mysql://localhost:3306/skbtlib";
+    String DB_USER = "root";
+    String DB_PASSWORD = "";
+    Connection conn ;
+    Statement stat ;
+    java.sql.ResultSet rest;
     Class.forName(DB_DRIVER);
-    Connection conn = DriverManager.getConnection(DB_HOST,DB_USER,DB_PASSWORD);
-    Statement stat = conn.createStatement();
-    stat.executeUpdate("delete from book where bookId = '"+ id +"'");
-    response.sendRedirect("ViewBook.jsp");
+    conn = DriverManager.getConnection(DB_HOST, DB_USER, DB_PASSWORD);
+    stat = conn.createStatement();
+    String data =  "select * from borrow_returninfo ";
+    rest = stat.executeQuery(data);
+    PrintWriter pout = response.getWriter();
+    while (rest.next()){
+
+        String bi = request.getParameter("bookID");
+        if(bi != id)
+        {
+            String DBDRIVER = "org.postgresql.Driver";
+            String DBHOST = "jdbc:postgresql://ec2-3-212-143-188.compute-1.amazonaws.com:5432/d9pq1r2tte9jfs";
+            String DBUSER = "wzhkegxdhdsbgm";
+            String DBPASSWORD = "2de0ec5650e40e6383f4ad61c98e44dec650a6a8f9d79fdf03efa59408d53f99";
+            Class.forName(DBDRIVER);
+            int row = 0;
+
+
+            try(Connection connection = DriverManager.getConnection(DBHOST, DBUSER, DBPASSWORD)){
+                PreparedStatement statement = connection.prepareStatement("delete from book where bookid = ?");
+                statement.setString(1, id);
+                row =statement.executeUpdate();
+            }
+            catch (Exception exception){
+
+            }
+
+            if(row == 0){
+                pout.println("<script type=\"text/javascript\">");
+                pout.println("alert('Book CANNOT Deleted !');");
+                pout.println("location='index.jsp';");
+                pout.println("</script>");
+            }
+
+            else{
+                pout.println("<script type=\"text/javascript\">");
+                pout.println("alert('Book Deleted !');");
+                pout.println("location='index.jsp';");
+                pout.println("</script>");
+            }
+
+
+        }
+        // else {
+
+
+
+
+        //}
+    }
 %>
 
