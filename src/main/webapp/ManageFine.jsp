@@ -278,6 +278,7 @@
     </script>
 </head>
 <body>
+<a href="LibrarianDashboard.jsp" class="btn btn-info">HOME</a>
 <div class="container-xl">
     <div class="table-responsive">
         <div class="table-wrapper">
