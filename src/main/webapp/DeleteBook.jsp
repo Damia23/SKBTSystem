@@ -29,7 +29,7 @@
     PrintWriter pout = response.getWriter();
     while (rest.next()){
 
-        String bi = request.getParameter("bookID");
+        String bi = request.getParameter("bookId");
         if(bi != id)
         {
             String DBDRIVER = "org.postgresql.Driver";
