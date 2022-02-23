@@ -24,7 +24,7 @@
     Class.forName(DB_DRIVER);
     conn = DriverManager.getConnection(DB_HOST, DB_USER, DB_PASSWORD);
     stat = conn.createStatement();
-    String data =  "select * from borrow_returninfo ";
+    String data =  "select * from borrowreturninfo ";
     rest = stat.executeQuery(data);
     PrintWriter pout = response.getWriter();
     while (rest.next()){
