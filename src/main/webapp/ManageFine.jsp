@@ -323,7 +323,7 @@
                     <td style="color:black"><%=res.getString("userName")%></td>
                     <td style="color:black"><%=res.getInt("bookID")%></td>
                     <td style="color:black"><%=res.getString("bookTitle")%></td>
-                    <td style="color:black">RM<%=res.getInt("fineAmount")%>.00</td>
+                    <td style="color:black">RM<%=res.getInt("fineamount")%>.00</td>
                     <td>
                         <a href='fineProcess.jsp?d=<%=res.getString("fineID")%>' class="btn btn-success">Paid</a>
                     </td>
