@@ -47,7 +47,7 @@
                 stat = conn.createStatement();
                 String u = request.getParameter("u");
                 String data = "select * from borrowreturninfo br join book b on br.bookid = b.bookid join library_user us on br.userid = us.userid " +
-                        "join fine f on br.borrowreturnid = f.borrowreturnid where borrowreturnid='"+ u +"'";
+                        " where borrowreturnid='"+ u +"'";
                 res = stat.executeQuery(data);
                 while(res.next()){
             %>
@@ -84,10 +84,6 @@
             <input id="returnlatedate" type="text" class="form-control" name="returnlatedate" readonly value='<%=res.getString("returnlatedate") %>'/>
             </div>
 
-            <div class="form-group">
-                <label>Return Date</label>
-                <input id="fineamount" type="text" class="form-control" name="fineamount" value='<%=res.getString("fineamount") %>'/>
-            </div>
 
             <button type="submit" class="button1">Submit</button>
             <a href="ViewBorrow.jsp" class="btn btn-default">Back</a>
@@ -101,11 +97,11 @@
     //String c = request.getParameter("userID");
     //String d = request.getParameter("bookID");
 
-    int a=0, b=0, c=0, d=0;
-    if( request.getParameter("fineamount")!=null || request.getParameter("borrowreturnid")!=null || request.getParameter("userid")!=null
+    int b=0, c=0, d=0;
+    if( request.getParameter("borrowreturnid")!=null || request.getParameter("userid")!=null
     || request.getParameter("bookid")!=null )
     {
-        a = Integer.parseInt(request.getParameter("fineamount"));
+        //a = Integer.parseInt(request.getParameter("fineamount"));
         b = Integer.parseInt(request.getParameter("borrowreturnid"));
         c = Integer.parseInt(request.getParameter("userid"));
         d = Integer.parseInt(request.getParameter("bookid"));
@@ -113,13 +109,12 @@
     }
 
 
-    if (a != 0 && b != 0 && c != 0 && d != 0  ) {
-        String query = "insert into fine( fineID,fineAmount,borrowReturnID,userID,bookID) values (default ,?,?,?,?)";
+    if ( b != 0 && c != 0 && d != 0  ) {
+        String query = "insert into fine( fineID,fineAmount,borrowReturnID,userID,bookID) values (default ,default, ?,?,?)";
         stmt = conn.prepareStatement(query);
-        stmt.setInt(1, a);
-        stmt.setInt(2, b);
-        stmt.setInt(3, c);
-        stmt.setInt(4, d);
+        stmt.setInt(1, b);
+        stmt.setInt(2, c);
+        stmt.setInt(3, d);
 
 
 
