@@ -86,7 +86,6 @@
                 <td style="color:black"><%=res.getString("bookPublisher")%></td>
                 <td class="text-center">
                     <a href='Updatebook.jsp?u=<%=res.getString("bookId")%>' class="btn btn-success">Update</a>
-                    <a href='DeleteBook.jsp?d=<%=res.getString("bookId")%>' class="btn btn-danger" onclick="return confirm('Are you sure to delete the book?')">Delete</a>
                     <a href='LibrarianBorrowbook.jsp?g=<%=res.getString("bookId")%>' class="btn btn-info" onclick="return confirm('Are you sure to borrow this book?')">Borrow</a>
                 </td>
             </tr>
