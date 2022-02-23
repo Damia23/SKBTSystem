@@ -79,8 +79,13 @@
             </div>
 
             <div class="form-group">
+            <label>Return Date</label>
+            <input id="returnlatedate" type="text" class="form-control" name="returnlatedate" readonly value='<%=res.getString("returnlatedate") %>'/>
+            </div>
+
+            <div class="form-group">
                 <label>Return Date</label>
-                <input id="returnlatedate" type="text" class="form-control" name="returnlatedate" value='<%=res.getString("returnlatedate") %>'/>
+                <input id="fineamount" type="text" class="form-control" name="fineamount" value='<%=res.getString("fineamount") %>'/>
             </div>
 
             <button type="submit" class="button1">Submit</button>
