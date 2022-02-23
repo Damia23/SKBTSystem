@@ -46,7 +46,8 @@
             <%
                 stat = conn.createStatement();
                 String u = request.getParameter("u");
-                String data = "select * from borrowreturninfo br join book b on br.bookid = b.bookid join library_user us on br.userid = us.userid where borrowreturnid='"+ u +"'";
+                String data = "select * from borrowreturninfo br join book b on br.bookid = b.bookid join library_user us on br.userid = us.userid " +
+                        "join fine f on br.borrowreturnid = f.borrowreturnid where borrowreturnid='"+ u +"'";
                 res = stat.executeQuery(data);
                 while(res.next()){
             %>
